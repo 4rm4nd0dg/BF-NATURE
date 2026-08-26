@@ -1,0 +1,184 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TypeSite {
+  parc_urbain
+  parc_national
+  reserve
+  site_culturel
+  musee
+}
+
+enum CategorieEspece {
+  animal
+  plante
+}
+
+enum RoleUtilisateur {
+  visiteur
+  gestionnaire
+  super_admin
+}
+
+enum TypeBillet {
+  individuel
+  groupe
+  scolaire
+  tarif_reduit
+}
+
+enum StatutPaiement {
+  en_attente
+  paye
+  echoue
+  rembourse
+}
+
+enum StatutDemandeLocation {
+  en_attente
+  validee
+  refusee
+}
+
+enum TypeContenu {
+  article
+  quiz
+  actualite
+}
+
+model Site {
+  id          String   @id @default(uuid())
+  nom         String
+  slug        String   @unique
+  type        TypeSite
+  description String   @db.Text
+  region      String
+  latitude    Float
+  longitude   Float
+  horaires    Json
+  tarifs      Json
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  especes                  Espece[]
+  personnel                Personnel[]
+  espaces_location         EspaceLocation[]
+  reservations_billets     ReservationBillet[]
+  contenus_sensibilisation ContenuSensibilisation[]
+
+  @@map("sites")
+}
+
+model Espece {
+  id              String          @id @default(uuid())
+  site_id         String
+  categorie       CategorieEspece
+  nom_commun      String
+  nom_scientifique String
+  description     String          @db.Text
+  photo_url       String
+
+  site Site @relation(fields: [site_id], references: [id], onDelete: Cascade)
+
+  @@map("especes")
+}
+
+model Personnel {
+  id        String @id @default(uuid())
+  site_id   String
+  nom       String
+  role      String
+  photo_url String
+
+  site Site @relation(fields: [site_id], references: [id], onDelete: Cascade)
+
+  @@map("personnel")
+}
+
+model Utilisateur {
+  id               String          @id @default(uuid())
+  nom              String
+  email            String          @unique
+  telephone        String?
+  mot_de_passe_hash String
+  role             RoleUtilisateur @default(visiteur)
+  created_at       DateTime        @default(now())
+
+  reservations_billets ReservationBillet[]
+  demandes_location    DemandeLocation[]
+
+  @@map("utilisateurs")
+}
+
+model ReservationBillet {
+  id             String         @id @default(uuid())
+  site_id        String
+  utilisateur_id String?
+  date_visite    DateTime
+  type_billet    TypeBillet
+  quantite       Int
+  montant_total  Float
+  statut_paiement StatutPaiement @default(en_attente)
+  qr_code        String         @db.Text
+  created_at     DateTime       @default(now())
+
+  site        Site         @relation(fields: [site_id], references: [id], onDelete: Cascade)
+  utilisateur Utilisateur? @relation(fields: [utilisateur_id], references: [id], onDelete: SetNull)
+
+  @@map("reservations_billets")
+}
+
+model EspaceLocation {
+  id            String  @id @default(uuid())
+  site_id       String
+  nom           String
+  capacite      Int
+  description   String  @db.Text
+  tarif_horaire Float
+
+  site              Site              @relation(fields: [site_id], references: [id], onDelete: Cascade)
+  demandes_location DemandeLocation[]
+
+  @@map("espaces_location")
+}
+
+model DemandeLocation {
+  id               String                @id @default(uuid())
+  espace_id        String
+  utilisateur_id   String?
+  nom_demandeur    String?
+  email_demandeur  String?
+  telephone_demandeur String?
+  date_evenement   DateTime
+  heure_debut      String
+  heure_fin        String
+  type_evenement   String
+  nombre_personnes Int
+  statut           StatutDemandeLocation @default(en_attente)
+  montant_devis    Float
+  created_at       DateTime              @default(now())
+
+  espace      EspaceLocation @relation(fields: [espace_id], references: [id], onDelete: Cascade)
+  utilisateur Utilisateur?   @relation(fields: [utilisateur_id], references: [id], onDelete: SetNull)
+
+  @@map("demandes_location")
+}
+
+model ContenuSensibilisation {
+  id        String      @id @default(uuid())
+  site_id   String?
+  titre     String
+  contenu   String      @db.Text
+  type      TypeContenu @default(article)
+  publie_le DateTime    @default(now())
+
+  site Site? @relation(fields: [site_id], references: [id], onDelete: SetNull)
+
+  @@map("contenus_sensibilisation")
+}

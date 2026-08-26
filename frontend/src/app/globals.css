@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canopy: #1E4029;
+  --canopy-deep: #132B1B;
+  --harmattan: #F7F3E8;
+  --sand: #EDE4CE;
+  --baobab: #A9702E;
+  --leaf: #7FA65C;
+  --ink: #23281F;
+  --ink-soft: #5B6153;
+  --card: #FFFFFF;
+  --font-fraunces: 'Fraunces', serif;
+  --font-work-sans: 'Work Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-work-sans), sans-serif;
+  color: var(--ink);
+  background-color: var(--harmattan);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-fraunces), serif;
+}
+
+.btn-pill {
+  border-radius: 100px;
+}
