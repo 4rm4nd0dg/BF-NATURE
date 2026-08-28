@@ -5,6 +5,198 @@ import { SpeciesCard } from '../../components/SpeciesCard';
 import { fetchSiteEspeces, Espece } from '../../lib/api';
 import { Filter, Search, TreePine, PawPrint } from 'lucide-react';
 
+const FALLBACK_ESPECES: Espece[] = [
+  {
+    id: '1',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Hippopotame amphibie',
+    nom_scientifique: 'Hippopotamus amphibius',
+    description: 'Grand mammifère semi-aquatique vivant dans les zones humides et le marigot du parc Bangr-Weoogo.',
+    photo_url: '/images/BAIN_D_HIPPOPO.jpg',
+  },
+  {
+    id: '2',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Pélican blanc',
+    nom_scientifique: 'Pelecanus onocrotalus',
+    description: 'Grand oiseau d\'eau à la poche gulaire impressionnante sous le bec.',
+    photo_url: '/images/BEC_A_POCHE_DU_PELICAN.jpg',
+  },
+  {
+    id: '3',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Choucador à longue queue',
+    nom_scientifique: 'Lamprotornis caudatus',
+    description: 'Passereau iridescent aux reflets bleus et verts métalliques et longue queue étincelante.',
+    photo_url: '/images/Choucador_à_longue_queue.jpg',
+  },
+  {
+    id: '4',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Crocodile du Nil',
+    nom_scientifique: 'Crocodylus niloticus',
+    description: 'Grand prédateur aquatique vivant dans le domaine réservé du marigot.',
+    photo_url: '/images/DOMAINE_DU_CROCO.jpg',
+  },
+  {
+    id: '5',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Marabout d\'Afrique',
+    nom_scientifique: 'Leptoptilos crumenifer',
+    description: 'Grand échassier symbole de la faune africaine à la grande envergure.',
+    photo_url: '/images/Marabout_d_Afrique.jpg',
+  },
+  {
+    id: '6',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Singe patas (Singe rouge)',
+    nom_scientifique: 'Erythrocebus patas',
+    description: 'Le singe le plus rapide au monde (55 km/h), emblème très connu du parc Bangr-Weoogo.',
+    photo_url: '/images/Mr._MONKEY_01.jpg',
+  },
+  {
+    id: '7',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Cobe de Fassa / Antilope',
+    nom_scientifique: 'Kobus ellipsiprymnus',
+    description: 'Élégante antilope aux cornes lyrées vivant dans la zone faunique préservée.',
+    photo_url: '/images/REGARD_D_ANTILOPE.jpg',
+  },
+  {
+    id: '8',
+    site_id: '1',
+    categorie: 'plante',
+    nom_commun: 'Nénuphar blanc du marigot',
+    nom_scientifique: 'Nymphaea lotus',
+    description: 'Plante aquatique sacrée fleurissant à la surface des eaux claires du parc.',
+    photo_url: '/images/RENAISSANCE_AU_BANGRE_WEOGO.jpg',
+  },
+  {
+    id: '9',
+    site_id: '1',
+    categorie: 'plante',
+    nom_commun: 'Fromager géant (Kapokier)',
+    nom_scientifique: 'Ceiba pentandra',
+    description: 'Arbre géant aux contreforts impressionnants marquant la canopée du parc.',
+    photo_url: '/images/TREE.jpg',
+  },
+  {
+    id: '10',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Tortue sillonnée du Sahel',
+    nom_scientifique: 'Centrochelys sulcata',
+    description: 'Plus grande tortue terrestre d\'Afrique, protégée au zoo de Bangr-Weoogo.',
+    photo_url: '/images/Tortue_en_chaleur.jpg',
+  },
+  {
+    id: '11',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Héron garde-bœufs',
+    nom_scientifique: 'Bubulcus ibis',
+    description: 'Échassier blanc au bec jaune accompagnant la grande faune herbivore du parc.',
+    photo_url: '/images/pexels-barrytheoctopus-36438047.jpg',
+  },
+  {
+    id: '12',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Aigle ravisseur',
+    nom_scientifique: 'Aquila rapax',
+    description: 'Rapace de la savane au vol majestueux planant au-dessus de la forêt classée.',
+    photo_url: '/images/pexels-charmain-11727678.jpg',
+  },
+  {
+    id: '13',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Agame des colons (Margouillat)',
+    nom_scientifique: 'Agama agama',
+    description: 'Lézard très vif à la tête couleur orange vif arpentant les rochers du parc.',
+    photo_url: '/images/pexels-enginakyurt-34313526.jpg',
+  },
+  {
+    id: '14',
+    site_id: '1',
+    categorie: 'plante',
+    nom_commun: 'Baobab africain',
+    nom_scientifique: 'Adansonia digitata',
+    description: 'L\'arbre de vie emblématique du Sahel au tronc gigantesque gorgé d\'eau.',
+    photo_url: '/images/pexels-julesgermainformel-36625842.jpg',
+  },
+  {
+    id: '15',
+    site_id: '1',
+    categorie: 'plante',
+    nom_commun: 'Karité du Burkina',
+    nom_scientifique: 'Vitellaria paradoxa',
+    description: 'Arbre béni d\'Afrique de l\'Ouest produisant les noix de karité.',
+    photo_url: '/images/pexels-lannguyentranm-37254820.jpg',
+  },
+  {
+    id: '16',
+    site_id: '1',
+    categorie: 'plante',
+    nom_commun: 'Néré (Arbre à moutarde)',
+    nom_scientifique: 'Parkia biglobosa',
+    description: 'Arbre emblématique dont les graines fermentées fabriquent le Soumbala.',
+    photo_url: '/images/pexels-moon-485480442-18345783.jpg',
+  },
+  {
+    id: '17',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Touraco violet',
+    nom_scientifique: 'Musophaga violacea',
+    description: 'Magnifique oiseau forestier au plumage violet sombre et huppe rouge carmin.',
+    photo_url: '/images/pexels-peterjochim-fotografie-37502422.jpg',
+  },
+  {
+    id: '18',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Varan du Nil du marigot',
+    nom_scientifique: 'Varanus niloticus',
+    description: 'Grand reptile semi-aquatique agile peuplant les rives du marigot.',
+    photo_url: '/images/pexels-philipp-fahlbusch-2985340-34392962.jpg',
+  },
+  {
+    id: '19',
+    site_id: '1',
+    categorie: 'plante',
+    nom_commun: 'Rônier (Palmier à éventail)',
+    nom_scientifique: 'Borassus aethiopum',
+    description: 'Grand palmier élancé aux larges palmes marquant le paysage du parc.',
+    photo_url: '/images/pexels-roman-odintsov-8189183.jpg',
+  },
+  {
+    id: '20',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Guêpier à gorge rouge',
+    nom_scientifique: 'Merops bulocki',
+    description: 'Oiseau multicolore chassant les insectes volants au-dessus des mares.',
+    photo_url: '/images/pexels-talharesitoglu-29591828.jpg',
+  },
+  {
+    id: '21',
+    site_id: '1',
+    categorie: 'animal',
+    nom_commun: 'Calao à bec rouge',
+    nom_scientifique: 'Tockus erythrorhynchus',
+    description: 'Oiseau emblématique de la canopée au chant matinal puissant.',
+    photo_url: '/images/pexels-timon-cornelissen-241844481-12702524.jpg',
+  },
+];
+
 export default function FauneFlorePage() {
   const [especes, setEspeces] = useState<Espece[]>([]);
   const [filter, setFilter] = useState<'all' | 'animal' | 'plante'>('all');
@@ -15,66 +207,14 @@ export default function FauneFlorePage() {
     async function loadData() {
       try {
         const data = await fetchSiteEspeces('bangr-weoogo');
-        setEspeces(data);
+        if (data && data.length > 0) {
+          setEspeces(data);
+        } else {
+          setEspeces(FALLBACK_ESPECES);
+        }
       } catch (err) {
-        console.error('Erreur de chargement des espèces:', err);
-        // Backup static data if API is unreachable during static render
-        setEspeces([
-          {
-            id: '1',
-            site_id: '1',
-            categorie: 'animal',
-            nom_commun: 'Singe patas',
-            nom_scientifique: 'Erythrocebus patas',
-            description: 'Singe à pelage roux, très agile et rapide (jusqu\'à 55 km/h). Habite la forêt sainte de Bangr-Weoogo.',
-            photo_url: 'https://images.unsplash.com/photo-1540573133985-780688d1728b?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            id: '2',
-            site_id: '1',
-            categorie: 'animal',
-            nom_commun: 'Varan du Nil',
-            nom_scientifique: 'Varanus niloticus',
-            description: 'Grand reptile d\'eau douce, prédateur naturel assurant la régulation biologique du marigot.',
-            photo_url: 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            id: '3',
-            site_id: '1',
-            categorie: 'animal',
-            nom_commun: 'Calao à bec rouge',
-            nom_scientifique: 'Tockus erythrorhynchus',
-            description: 'Oiseau emblématique de la savane arborée ouest-africaine, vivant en groupe dans les arbres fruitiers.',
-            photo_url: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            id: '4',
-            site_id: '1',
-            categorie: 'plante',
-            nom_commun: 'Karité',
-            nom_scientifique: 'Vitellaria paradoxa',
-            description: 'Arbre précieux des savanes soudano-sahéliennes produisant les noix de karité.',
-            photo_url: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            id: '5',
-            site_id: '1',
-            categorie: 'plante',
-            nom_commun: 'Baobab africain',
-            nom_scientifique: 'Adansonia digitata',
-            description: 'Arbre séculaire légendaire du Sahel, pouvant stocker des milliers de litres d\'eau.',
-            photo_url: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80',
-          },
-          {
-            id: '6',
-            site_id: '1',
-            categorie: 'animal',
-            nom_commun: 'Tortue sillonnée',
-            nom_scientifique: 'Centrochelys sulcata',
-            description: 'Troisième plus grande tortue terrestre du monde, préservée au zoo du parc.',
-            photo_url: 'https://images.unsplash.com/photo-1508455858334-95337ba25607?auto=format&fit=crop&w=800&q=80',
-          },
-        ]);
+        console.warn('Utilisation de la liste de secours pour la biodiversité:', err);
+        setEspeces(FALLBACK_ESPECES);
       } finally {
         setLoading(false);
       }
@@ -99,10 +239,10 @@ export default function FauneFlorePage() {
             Biodiversité du parc Bangr-Weoogo
           </span>
           <h1 className="font-serif text-4xl md:text-5xl font-medium text-canopy-deep">
-            Faune &amp; Flore du Sahel
+            Biodiversité du Sahel
           </h1>
           <p className="text-sm text-ink-soft mt-3 leading-relaxed">
-            Explorez les animaux et plantes répertoriés dans la forêt classée de 250 hectares à Ouagadougou.
+            Explorez la riche variété d'animaux et de plantes répertoriés dans la forêt classée de 250 hectares à Ouagadougou.
           </p>
         </div>
 

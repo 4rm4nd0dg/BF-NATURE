@@ -1,15 +1,19 @@
-# Burkina Nature & Culture — Parc Urbain Bangr-Weoogo MVP (Phase 1)
+# Burkina Nature & Culture — Architecture Multi-Projets (Backend, Frontend Public & Portail Admin)
 
-Bienvenue sur la plateforme **Burkina Nature & Culture**, dédiée au **Parc Urbain Bangr-Weoogo** à Ouagadougou, Burkina Faso. 
+Bienvenue sur la plateforme **Burkina Nature & Culture**, dédiée au **Parc Urbain Bangr-Weoogo** à Ouagadougou, Burkina Faso.
 
-Le projet est conçu avec une **architecture en 3 couches réutilisable** (Base de données PostgreSQL → API REST centrale Node.js/Express → Client Frontend Next.js).
+Le projet est conçu avec une **architecture découplée et modulaire** :
+- **Backend API Central** (`backend/`) : Base de données PostgreSQL + Express REST API (Port 4000)
+- **Portail Public Visiteurs** (`frontend/`) : Site web public Next.js (Port 3000)
+- **Portail d'Administration Autonome** (`admin/`) : Dashboard de gestion Next.js indépendant (Port 3001)
 
 ---
 
 ## 🛠️ Stack Technique
 
-- **Frontend** : Next.js 14 (React, TypeScript, Tailwind CSS), rendu SSR/SEO
-- **Backend** : Node.js + Express + TypeScript
+- **Frontend Public (`frontend/`)** : Next.js 14 (React, TypeScript, Tailwind CSS), rendu SSR/SEO
+- **Portail Admin (`admin/`)** : Next.js 14 (React, TypeScript, Tailwind CSS), Dashboard autonome
+- **Backend API Central (`backend/`)** : Node.js + Express + TypeScript
 - **Base de données** : PostgreSQL + Prisma ORM
 - **Authentification & Sécurité** : JWT + Hachage `bcryptjs` + Validation `Zod`
 - **Services** : Mock/Stub Paiement Mobile Money (Orange Money / Moov Money) & Générateur de QR Code SVG/PNG
@@ -26,7 +30,6 @@ Le projet est conçu avec une **architecture en 3 couches réutilisable** (Base 
 - `--leaf` : `#7FA65C` (Vert tendre — Accents & tags)
 - `--ink` : `#23281F` (Texte chaud)
 - **Typographie** : `Fraunces` (Google Fonts, Titres serif) & `Work Sans` (Google Fonts, Corps & UI)
-- **Signature visuelle** : Ligne de canopée ondulée (SVG) sous le hero.
 
 ---
 
@@ -34,7 +37,7 @@ Le projet est conçu avec une **architecture en 3 couches réutilisable** (Base 
 
 ### 1. Pré-requis
 - **Node.js** (v18+) & `npm`
-- **Docker / Docker Compose** (pour PostgreSQL) ou un serveur PostgreSQL local
+- **Docker / Docker Compose** (pour PostgreSQL)
 
 ---
 
@@ -46,11 +49,9 @@ Dans le dossier racine du projet :
 docker-compose up -d
 ```
 
-*(Cette commande démarre une instance PostgreSQL 15 sur le port `5432` avec les identifiants `postgres` / `postgrespassword` / base `bf_nature`)*
-
 ---
 
-### 3. Configurer & Lancer le Backend (API REST Express)
+### 3. Configurer & Lancer le Backend (API REST Express - Port 4000)
 
 1. Ouvrez un terminal dans `backend/` :
    ```bash
@@ -58,22 +59,13 @@ docker-compose up -d
    npm install
    ```
 
-2. Créez / vérifiez le fichier `.env` :
-   ```env
-   PORT=4000
-   DATABASE_URL="postgresql://postgres:postgrespassword@localhost:5432/bf_nature?schema=public"
-   JWT_SECRET="burkina_nature_culture_jwt_secret_key_2026_super_secure"
-   FRONTEND_URL="http://localhost:3000"
-   ```
-
-3. Exécutez les migrations Prisma & le script de seed :
+2. Exécutez les migrations Prisma & le script de seed :
    ```bash
    npx prisma db push
    npm run db:seed
    ```
-   *(Insère le site Bangr-Weoogo, les espèces : Singe patas, Varan du Nil, Calao, Karité, Baobab, Tortue, les espaces de location et le compte admin)*
 
-4. Démarrez l'API REST en mode dev :
+3. Démarrez l'API REST :
    ```bash
    npm run dev
    ```
@@ -81,30 +73,38 @@ docker-compose up -d
 
 ---
 
-### 4. Configurer & Lancer le Frontend (Next.js)
+### 4. Configurer & Lancer le Portail Public (`frontend/` - Port 3000)
 
-1. Dans un second terminal, allez dans `frontend/` :
+1. Dans un autre terminal, allez dans `frontend/` :
    ```bash
    cd frontend
    npm install
-   ```
-
-2. Lancer le serveur Next.js :
-   ```bash
    npm run dev
    ```
-   *Le site web est accessible sur `http://localhost:3000`.*
+   *Le site public est accessible sur `http://localhost:3000`.*
 
 ---
 
-## 🔑 Identifiants d'Accès Administration (Back-Office `/admin`)
+### 5. Configurer & Lancer le Portail Administration Autonome (`admin/` - Port 3001)
+
+1. Dans un troisième terminal, allez dans `admin/` :
+   ```bash
+   cd admin
+   npm install
+   npm run dev
+   ```
+   *Le portail d'administration est accessible sur `http://localhost:3001`.*
+
+---
+
+## 🔑 Identifiants d'Accès Administration (Portail Admin - `http://localhost:3001`)
 
 - **E-mail** : `admin@bangrweoogo.bf`
 - **Mot de passe** : `AdminPassword123!`
 
 ---
 
-## 📌 Endpoints API REST Implémentés
+## 📌 Endpoints API REST Centralisés
 
 ```
 GET    /api/sites                   # Liste tous les sites

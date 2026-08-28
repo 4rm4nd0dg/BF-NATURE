@@ -62,11 +62,7 @@ export const Footer: React.FC = () => {
                 Location de salles &amp; espaces
               </Link>
             </li>
-            <li>
-              <Link href="/admin" className="text-[#8A9682] hover:text-white transition-colors text-xs inline-flex items-center gap-1 mt-2">
-                🔒 Espace Administration / Agent
-              </Link>
-            </li>
+
           </ul>
         </div>
 
