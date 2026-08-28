@@ -124,7 +124,7 @@ async function main() {
       nom_scientifique: 'Erythrocebus patas',
       description:
         'Le singe le plus rapide au monde (jusqu\'à 55 km/h), emblème agitateur et populaire du parc Bangr-Weoogo.',
-      photo_url: '/images/Mr._MONKEY_01.jpg',
+      photo_url: '/images/pexels-daniel-gomez-2158503858-35567587.jpg',
     },
     {
       site_id: site.id,
@@ -159,34 +159,34 @@ async function main() {
       nom_commun: 'Tortue sillonnée du Sahel',
       nom_scientifique: 'Centrochelys sulcata',
       description:
-        'Troisième plus grande tortue terrestre du monde et la plus grande d\'Afrique, protégée au zoo.',
-      photo_url: '/images/Tortue_en_chaleur.jpg',
+        'Troisième plus grande tortue terrestre du monde et la plus grande d\'Afrique, protégée au zoo de Bangr-Weoogo.',
+      photo_url: '/images/pexels-f-fezari-326720894-30966189.jpg',
     },
     {
       site_id: site.id,
       categorie: CategorieEspece.animal,
-      nom_commun: 'Héron garde-bœufs',
-      nom_scientifique: 'Bubulcus ibis',
+      nom_commun: 'Écureuil de savane (Écureuil arboricole)',
+      nom_scientifique: 'Heliosciurus gambianus',
       description:
-        'Échassier blanc au bec jaune accompagnant la grande faune herbivore du parc.',
+        'Petit rongeur agile au pelage touffu grimpant le long des troncs et des branches des grands arbres.',
       photo_url: '/images/pexels-barrytheoctopus-36438047.jpg',
     },
     {
       site_id: site.id,
       categorie: CategorieEspece.animal,
-      nom_commun: 'Aigle ravisseur',
-      nom_scientifique: 'Aquila rapax',
+      nom_commun: 'Hyène tachetée',
+      nom_scientifique: 'Crocuta crocuta',
       description:
-        'Grand rapace de la savane au vol majestueux planant au-dessus de la canopée de Bangr-Weoogo.',
+        'Grand carnivore emblématique de la savane africaine aux mâchoires puissantes et au pelage tacheté.',
       photo_url: '/images/pexels-charmain-11727678.jpg',
     },
     {
       site_id: site.id,
       categorie: CategorieEspece.animal,
-      nom_commun: 'Agame des colons (Margouillat)',
-      nom_scientifique: 'Agama agama',
+      nom_commun: 'Pintade de Numidie (Pintade sauvage)',
+      nom_scientifique: 'Numida meleagris',
       description:
-        'Petit lézard très coloré à tête orange vive arpentant les rochers et les bâtiments du parc.',
+        'Oiseau terrestre d\'Afrique au plumage sombre ponctué de blanc et au casque corné caractéristiques.',
       photo_url: '/images/pexels-enginakyurt-34313526.jpg',
     },
     {
@@ -195,7 +195,7 @@ async function main() {
       nom_commun: 'Baobab africain',
       nom_scientifique: 'Adansonia digitata',
       description:
-        'L\'arbre de vie mythique du Sahel au tronc imposant emmagasinant des réserves d\'eau précieuses.',
+        'L\'arbre de vie mythique du Sahel au tronc gigantesque emmagasinant de précieuses réserves d\'eau.',
       photo_url: '/images/pexels-julesgermainformel-36625842.jpg',
     },
     {
@@ -204,62 +204,80 @@ async function main() {
       nom_commun: 'Karité du Burkina',
       nom_scientifique: 'Vitellaria paradoxa',
       description:
-        'Arbre vénéré produisant les amandes de karité, véritable or vert de l\'Afrique de l\'Ouest.',
+        'Arbre vénéré produisant les amandes de karité, véritable or vert des savanes de l\'Afrique de l\'Ouest.',
       photo_url: '/images/pexels-lannguyentranm-37254820.jpg',
     },
     {
       site_id: site.id,
-      categorie: CategorieEspece.plante,
-      nom_commun: 'Néré (Arbre à moutarde)',
-      nom_scientifique: 'Parkia biglobosa',
+      categorie: CategorieEspece.animal,
+      nom_commun: 'Paon bleu',
+      nom_scientifique: 'Pavo cristatus',
       description:
-        'Arbre champêtre produisant de longues gousses dont les graines fermentées fabriquent le Soumbala.',
+        'Superbe oiseau d\'ornement au cou bleu saphir étincelant et aux plumes ocellées évoluant en liberté.',
       photo_url: '/images/pexels-moon-485480442-18345783.jpg',
     },
     {
       site_id: site.id,
       categorie: CategorieEspece.animal,
-      nom_commun: 'Touraco violet',
-      nom_scientifique: 'Musophaga violacea',
+      nom_commun: 'Héron cendré',
+      nom_scientifique: 'Ardea cinerea',
       description:
-        'Magnifique oiseau forestier au plumage violet sombre brillant et à la huppe carmin flamboyante.',
+        'Grand échassier solitaire au plumage gris et blanc guettant les poissons au bord des plans d\'eau.',
       photo_url: '/images/pexels-peterjochim-fotografie-37502422.jpg',
     },
     {
       site_id: site.id,
       categorie: CategorieEspece.animal,
-      nom_commun: 'Varan du Nil du marigot',
+      nom_commun: 'Varan du Nil',
       nom_scientifique: 'Varanus niloticus',
       description:
-        'Grand reptile semi-aquatique agile assurant l\'équilibre biologique des cours d\'eau du parc.',
+        'Grand reptile semi-aquatique agile arpentant les berges du marigot et les rochers de la forêt classée.',
       photo_url: '/images/pexels-philipp-fahlbusch-2985340-34392962.jpg',
     },
     {
       site_id: site.id,
-      categorie: CategorieEspece.plante,
-      nom_commun: 'Rônier (Palmier à éventail)',
-      nom_scientifique: 'Borassus aethiopum',
+      categorie: CategorieEspece.animal,
+      nom_commun: 'Canards sauvages du plan d\'eau',
+      nom_scientifique: 'Anas platyrhynchos',
       description:
-        'Grand palmier élancé aux larges palmes en éventail marquant les paysages humides du parc.',
+        'Oiseaux aquatiques s\'ébattant paisiblement sur la surface des marigots et des bassins du parc.',
       photo_url: '/images/pexels-roman-odintsov-8189183.jpg',
     },
     {
       site_id: site.id,
       categorie: CategorieEspece.animal,
-      nom_commun: 'Guêpier à gorge rouge',
-      nom_scientifique: 'Merops bulocki',
+      nom_commun: 'Chauve-souris frugivore (Roussette)',
+      nom_scientifique: 'Eidolon helvum',
       description:
-        'Oiseau multicolore aux reflets verts et rouge vif chassant les insectes volants en acrobatie.',
+        'Mammifère volant nocturne suspendu aux hautes branches, essentiel à la pollinisation de la forêt.',
       photo_url: '/images/pexels-talharesitoglu-29591828.jpg',
     },
     {
       site_id: site.id,
       categorie: CategorieEspece.animal,
-      nom_commun: 'Calao à bec rouge du Sahel',
-      nom_scientifique: 'Tockus erythrorhynchus',
+      nom_commun: 'Calao à bec jaune',
+      nom_scientifique: 'Tockus flavirostris',
       description:
-        'Oiseau emblématique dont le chant résonne chaque matin au sommet des grands arbres du parc.',
+        'Oiseau emblématique de la savane au bec courbé jaune vif dont les appels résonnent au sommet des arbres.',
       photo_url: '/images/pexels-timon-cornelissen-241844481-12702524.jpg',
+    },
+    {
+      site_id: site.id,
+      categorie: CategorieEspece.plante,
+      nom_commun: 'Flamboyant jaune en fleurs',
+      nom_scientifique: 'Cassia fistula',
+      description:
+        'Arbre d\'ornement remarquable aux grappes dorées éclatantes apportant une touche de couleur au parc.',
+      photo_url: '/images/pexels-debora-silva-2149722460-32678993.jpg',
+    },
+    {
+      site_id: site.id,
+      categorie: CategorieEspece.plante,
+      nom_commun: 'Acacia de la savane',
+      nom_scientifique: 'Acacia senegal',
+      description:
+        'Arbre typique des régions sahéliennes au feuillage fin composé, symbole de résistance à la sécheresse.',
+      photo_url: '/images/pexels-joel-jose-518889169-16764330.jpg',
     },
   ];
 

@@ -26,7 +26,7 @@ export default async function EspeceDetailPage({ params }: { params: { id: strin
       nom_scientifique: 'Erythrocebus patas',
       description:
         'Le singe patas, aussi connu sous le nom de singe rouge ou hussard, est une espèce de primates de la famille des Cercopithecidae. C\'est le seul représentant du genre Erythrocebus. Il se caractérise par son pelage roux vif, son ventre blanc et sa vitesse de course exceptionnelle qui peut atteindre 55 km/h dans les savanes ouvertes du parc Bangr-Weoogo.',
-      photo_url: 'https://images.unsplash.com/photo-1540573133985-780688d1728b?auto=format&fit=crop&w=800&q=80',
+      photo_url: '/images/pexels-daniel-gomez-2158503858-35567587.jpg',
     };
   }
 

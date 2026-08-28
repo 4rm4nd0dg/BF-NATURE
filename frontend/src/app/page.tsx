@@ -25,7 +25,7 @@ export default async function HomePage() {
       nom_commun: 'Singe patas',
       nom_scientifique: 'Erythrocebus patas',
       description: 'Le singe le plus rapide au monde (55 km/h), emblème du parc Bangr-Weoogo.',
-      photo_url: 'https://images.unsplash.com/photo-1540573133985-780688d1728b?auto=format&fit=crop&w=800&q=80',
+      photo_url: '/images/pexels-daniel-gomez-2158503858-35567587.jpg',
     },
     {
       id: '2',
@@ -34,7 +34,7 @@ export default async function HomePage() {
       nom_commun: 'Varan du Nil',
       nom_scientifique: 'Varanus niloticus',
       description: 'Grand reptile aquatique vivant près du marigot du parc.',
-      photo_url: 'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?auto=format&fit=crop&w=800&q=80',
+      photo_url: '/images/pexels-philipp-fahlbusch-2985340-34392962.jpg',
     },
     {
       id: '3',
@@ -43,7 +43,7 @@ export default async function HomePage() {
       nom_commun: 'Calao à bec rouge',
       nom_scientifique: 'Tockus erythrorhynchus',
       description: 'Oiseau majestueux au bec incurvé vif rythmant la canopée.',
-      photo_url: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=800&q=80',
+      photo_url: '/images/pexels-timon-cornelissen-241844481-12702524.jpg',
     },
     {
       id: '4',
@@ -52,7 +52,7 @@ export default async function HomePage() {
       nom_commun: 'Karité',
       nom_scientifique: 'Vitellaria paradoxa',
       description: 'L\'arbre sacré du Sahel produisant les précieuses amandes de karité.',
-      photo_url: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
+      photo_url: '/images/pexels-lannguyentranm-37254820.jpg',
     },
   ];
 
