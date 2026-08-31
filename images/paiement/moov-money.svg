@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" rx="16" fill="#0055A5"/>
+  <circle cx="44" cy="40" r="24" fill="#FF6600"/>
+  <path d="M32 40L40 48L56 32" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="44" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#FFFFFF">moov</text>
+  <text x="80" y="62" font-family="Arial, sans-serif" font-weight="bold" font-size="15" fill="#FF6600">money</text>
+</svg>

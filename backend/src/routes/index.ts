@@ -1,7 +1,12 @@
 import { Router } from 'express';
 import { getAllSites, getSiteBySlug, getSiteEspeces, getSiteEspaces } from '../controllers/siteController.js';
 import { createReservation, getReservationById } from '../controllers/reservationController.js';
-import { createDemandeLocation, updateDemandeLocationStatus } from '../controllers/locationController.js';
+import {
+  createDemandeLocation,
+  getDemandeLocationById,
+  updateDemandeLocationStatus,
+  payLocationDemande
+} from '../controllers/locationController.js';
 import { register, login } from '../controllers/authController.js';
 import {
   createContenuSensibilisation,
@@ -27,7 +32,9 @@ router.get('/reservations/:id', getReservationById);
 
 // Routes Location d'espaces
 router.post('/locations', createDemandeLocation);
+router.get('/locations/:id', getDemandeLocationById);
 router.patch('/locations/:id', updateDemandeLocationStatus);
+router.post('/locations/:id/pay', payLocationDemande);
 
 // Routes Authentification
 router.post('/auth/register', register);

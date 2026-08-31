@@ -135,8 +135,11 @@ export async function createReservationApi(data: {
   date_visite: string;
   type_billet: string;
   quantite: number;
-  provider_paiement: 'orange_money' | 'moov_money';
-  telephone_paiement: string;
+  provider_paiement: 'orange_money' | 'moov_money' | 'wave' | 'coris_money' | 'card';
+  telephone_paiement?: string;
+  card_number?: string;
+  card_expiry?: string;
+  card_cvc?: string;
 }): Promise<{ reservation: Reservation; paymentResult: any }> {
   const res = await fetch(`${API_BASE_URL}/reservations`, {
     method: 'POST',
@@ -173,6 +176,31 @@ export async function createDemandeLocationApi(data: {
   return res.json();
 }
 
+export async function fetchDemandeLocationByIdApi(id: string): Promise<DemandeLocation> {
+  const res = await fetch(`${API_BASE_URL}/locations/${id}`, { cache: 'no-store' });
+  if (!res.ok) throw new Error('Dossier introuvable');
+  return res.json();
+}
+
+export async function payDemandeLocationApi(id: string, data: {
+  provider_paiement: 'orange_money' | 'moov_money' | 'wave' | 'coris_money' | 'card';
+  telephone_paiement?: string;
+  card_number?: string;
+  card_expiry?: string;
+  card_cvc?: string;
+}): Promise<{ demande: DemandeLocation; paymentResult: any }> {
+  const res = await fetch(`${API_BASE_URL}/locations/${id}/pay`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(err.error || 'Paiement refusé par le serveur.');
+  }
+  return res.json();
+}
+
 export async function loginApi(email: string, mot_de_passe: string) {
   const res = await fetch(`${API_BASE_URL}/auth/login`, {
     method: 'POST',
@@ -204,10 +232,13 @@ export async function fetchAdminLocations(token: string): Promise<DemandeLocatio
   return res.json();
 }
 
-export async function updateLocationStatusApi(id: string, statut: string) {
+export async function updateLocationStatusApi(id: string, statut: string, token?: string) {
+  const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+
   const res = await fetch(`${API_BASE_URL}/locations/${id}`, {
     method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
+    headers,
     body: JSON.stringify({ statut }),
   });
   if (!res.ok) throw new Error('Erreur lors de la mise à jour');

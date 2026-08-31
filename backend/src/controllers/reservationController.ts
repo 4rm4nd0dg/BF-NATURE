@@ -10,8 +10,11 @@ const reservationSchema = z.object({
   date_visite: z.string(),
   type_billet: z.nativeEnum(TypeBillet),
   quantite: z.number().int().min(1).max(50),
-  provider_paiement: z.enum(['orange_money', 'moov_money']),
-  telephone_paiement: z.string().min(8),
+  provider_paiement: z.enum(['orange_money', 'moov_money', 'wave', 'coris_money', 'card']),
+  telephone_paiement: z.string().optional(),
+  card_number: z.string().optional(),
+  card_expiry: z.string().optional(),
+  card_cvc: z.string().optional(),
 });
 
 type ReservationInput = z.infer<typeof reservationSchema>;
@@ -33,18 +36,21 @@ export async function createReservation(req: Request, res: Response) {
     const prixUnitaire = tarifsObj[validatedData.type_billet] || 1500;
     const montantTotal = prixUnitaire * validatedData.quantite;
 
-    // Traitement du paiement via Mobile Money Stub
+    // Traitement du paiement via le service multi-opérateurs
     const paymentResult = await processMobileMoneyPayment({
       provider: validatedData.provider_paiement,
       phoneNumber: validatedData.telephone_paiement,
+      cardNumber: validatedData.card_number,
+      cardExpiry: validatedData.card_expiry,
+      cardCvc: validatedData.card_cvc,
       amount: montantTotal,
     });
 
     if (!paymentResult.success) {
-      return res.status(400).json({ error: 'Le paiement Mobile Money a échoué.' });
+      return res.status(400).json({ error: 'Le paiement a été refusé par l\'opérateur.' });
     }
 
-    const tempId = `res_${Date.now()}`;
+    const tempId = `RES_${Date.now()}`;
     const qrCodeUrl = await generateTicketQRCodeDataUrl(
       tempId,
       site.nom,

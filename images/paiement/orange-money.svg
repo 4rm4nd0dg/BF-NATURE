@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect width="200" height="80" rx="16" fill="#FF6600"/>
+  <rect x="20" y="16" width="48" height="48" rx="8" fill="#000000"/>
+  <rect x="34" y="30" width="20" height="20" fill="#FF6600"/>
+  <text x="80" y="44" font-family="Arial, sans-serif" font-weight="bold" font-size="20" fill="#FFFFFF">Orange</text>
+  <text x="80" y="62" font-family="Arial, sans-serif" font-weight="bold" font-size="16" fill="#000000">Money</text>
+</svg>
