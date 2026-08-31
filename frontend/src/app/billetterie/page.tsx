@@ -311,7 +311,7 @@ export default function BilletteriePage() {
                 <div className="grid grid-cols-2 gap-3">
                   {Object.entries(PaymentProviderLogos).map(([key, item]) => (
                     <div key={key} className="p-3 bg-harmattan rounded-2xl border border-[#E9E1CC] flex items-center gap-3">
-                      {item.logo}
+                      <img src={item.logoUrl} alt={item.name} className="h-7 w-auto max-w-[65px] object-contain rounded" />
                       <div>
                         <div className="text-xs font-bold text-canopy">{item.name}</div>
                         <div className="text-[10px] text-ink-soft">{item.subtitle}</div>
