@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { CanopyLine } from '../../components/CanopyLine';
+import { Breadcrumb } from '../../components/Breadcrumb';
 import {
   History,
   Calendar,
@@ -131,6 +132,7 @@ export default function HistoirePage() {
       {/* HERO SECTION */}
       <section className="bg-canopy text-harmattan relative overflow-hidden pt-16 pb-14">
         <div className="max-w-[1180px] mx-auto px-6 relative z-20">
+          <Breadcrumb items={[{ label: 'Histoire & Réhabilitation' }]} />
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-leaf mb-4 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm border border-leaf/30">
             <History className="w-4 h-4 text-leaf" /> Mémoire, Patrimoine &amp; Avenir du Parc
           </div>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { CanopyLine } from '../../components/CanopyLine';
+import { Breadcrumb } from '../../components/Breadcrumb';
 import { Image as ImageIcon, Video, Play, Eye, X, ExternalLink, Sparkles } from 'lucide-react';
 
 export interface VideoItem {
@@ -167,6 +168,7 @@ export function MediathequeClient() {
       {/* HEADER */}
       <section className="bg-canopy text-harmattan relative overflow-hidden pt-16 pb-12">
         <div className="max-w-[1180px] mx-auto px-6 relative z-20">
+          <Breadcrumb items={[{ label: 'Médiathèque' }]} />
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-leaf mb-4 bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-sm border border-leaf/30">
             <ImageIcon className="w-4 h-4 text-leaf" /> Médiathèque Officielle du Parc
           </div>

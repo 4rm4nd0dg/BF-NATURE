@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchSiteEspaces, createDemandeLocationApi, fetchDemandeLocationByIdApi, payDemandeLocationApi, EspaceLocation, DemandeLocation } from '../../lib/api';
 import { PaymentModal, PaymentDetails, PaymentProviderLogos } from '../../components/PaymentModal';
+import { Breadcrumb } from '../../components/Breadcrumb';
 import { Calendar, Clock, Users, Building, Calculator, CheckCircle2, Send, ArrowRight, ShieldAlert, Lock, Search, AlertCircle, FileText, CheckCircle, XCircle, Download, Printer, CreditCard, Sparkles } from 'lucide-react';
 
 export default function LocationEspacesPage() {
@@ -200,6 +201,8 @@ export default function LocationEspacesPage() {
   return (
     <div className="py-12 bg-harmattan min-h-screen">
       <div className="max-w-[1180px] mx-auto px-6">
+        <Breadcrumb items={[{ label: 'Location d\'Espaces' }]} />
+
         {/* Header */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-widest text-leaf inline-block mb-2 bg-leaf/10 border border-leaf/30 px-3.5 py-1 rounded-full">

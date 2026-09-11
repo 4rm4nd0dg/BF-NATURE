@@ -1,5 +1,27 @@
+# Dépendances & Builds
 node_modules/
-.env
-.next/
-.env.local
 dist/
+.next/
+out/
+build/
+*.tsbuildinfo
+
+# Fichiers d'environnement & Clés Secrètes (Règle 2 : .env dans .gitignore)
+.env
+.env.*
+!.env.example
+
+# Logs & temporaires
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Base de données & Backups locaux
+*.db
+*.sqlite
+backups/*.sql.gz
+
+# Système d'exploitation
+.DS_Store
+Thumbs.db

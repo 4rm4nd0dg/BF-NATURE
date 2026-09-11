@@ -102,13 +102,14 @@ model Personnel {
 }
 
 model Utilisateur {
-  id               String          @id @default(uuid())
-  nom              String
-  email            String          @unique
-  telephone        String?
+  id                String          @id @default(uuid())
+  nom               String
+  email             String          @unique
+  telephone         String?
   mot_de_passe_hash String
-  role             RoleUtilisateur @default(visiteur)
-  created_at       DateTime        @default(now())
+  email_confirme    Boolean         @default(false)
+  role              RoleUtilisateur @default(visiteur)
+  created_at        DateTime        @default(now())
 
   reservations_billets ReservationBillet[]
   demandes_location    DemandeLocation[]

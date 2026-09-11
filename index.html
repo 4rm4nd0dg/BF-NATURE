@@ -519,26 +519,32 @@
 
     /* SENSIBILISATION */
     .quote-section {
-      background: var(--sand);
+      background: linear-gradient(rgba(19, 43, 27, 0.65), rgba(19, 43, 27, 0.65)), url('images/aller.webp') center/cover no-repeat;
       border-radius: 28px;
       padding: 70px 60px;
       text-align: center;
+      color: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
     .quote-section p.quote {
       font-family: 'Fraunces', serif;
       font-style: italic;
       font-size: 26px;
-      color: var(--canopy-deep);
+      color: #ffffff;
       max-width: 640px;
       margin: 0 auto;
       line-height: 1.5;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     .quote-section .attr {
       margin-top: 22px;
       font-size: 13.5px;
-      color: var(--ink-soft);
+      color: #7FA65C;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     footer {
@@ -584,33 +590,39 @@
       padding: 72px 0;
       background: var(--harmattan);
     }
+
     .landmark-section.alt-bg {
       background: var(--sand);
       border-top: 1px solid #DED2B4;
       border-bottom: 1px solid #DED2B4;
     }
+
     .landmark-grid {
       display: grid;
       grid-template-columns: 1.1fr 1fr;
       gap: 48px;
       align-items: center;
     }
+
     .landmark-grid.reverse {
       grid-template-columns: 1fr 1.1fr;
     }
+
     .landmark-image-box {
       background: var(--card);
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid #E9E1CC;
-      box-shadow: 0 6px 24px rgba(30,64,41,0.08);
+      box-shadow: 0 6px 24px rgba(30, 64, 41, 0.08);
     }
+
     .landmark-image-box img {
       width: 100%;
       height: 340px;
       object-fit: cover;
       display: block;
     }
+
     .landmark-caption {
       padding: 16px 20px;
       font-size: 13.5px;
@@ -619,34 +631,40 @@
       border-top: 1px solid #E9E1CC;
       line-height: 1.5;
     }
+
     .landmark-info h2 {
       font-size: 32px;
       color: var(--canopy-deep);
       margin-top: 8px;
       margin-bottom: 12px;
     }
+
     .landmark-info .lede {
       font-size: 15.5px;
       color: var(--ink-soft);
       margin-bottom: 24px;
     }
+
     .info-list {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
+
     .info-item {
       background: var(--card);
       padding: 18px 20px;
       border-radius: 14px;
       border: 1px solid #E9E1CC;
     }
+
     .info-item strong {
       display: block;
       font-size: 14.5px;
       color: var(--canopy);
       margin-bottom: 4px;
     }
+
     .info-item p {
       font-size: 13.5px;
       color: var(--ink-soft);
@@ -745,27 +763,33 @@
     <div class="wrap">
       <div class="landmark-grid">
         <div class="landmark-image-box">
-          <img src="images/Parc_Urbain_Bangr-Weoogo_entrance,_Burkina_Faso,_2008 (1).jpg" alt="Portail d'entrée principale du Parc Bangr-Weoogo">
+          <img src="images/Parc_Urbain_Bangr-Weoogo_entrance,_Burkina_Faso,_2008 (1).jpg"
+            alt="Portail d'entrée principale du Parc Bangr-Weoogo">
           <div class="landmark-caption">
-            📍 <strong>Portail Monumental d'Entrée (Avenue Charles de Gaulle)</strong> — Accueil des visiteurs et billetterie du Parc Bangr-Weoogo à Ouagadougou.
+            📍 <strong>Portail Monumental d'Entrée (Avenue Charles de Gaulle)</strong> — Accueil des visiteurs et
+            billetterie du Parc Bangr-Weoogo à Ouagadougou.
           </div>
         </div>
         <div class="landmark-info">
           <div class="eyebrow">Accueil &amp; Accès Principal</div>
           <h2>Le Portail d'Entrée du Parc</h2>
-          <p class="lede">Bienvenue à l'entrée officielle de la forêt classée de Bangr-Weoogo, l'oasis verte de Ouagadougou.</p>
+          <p class="lede">Bienvenue à l'entrée officielle de la forêt classée de Bangr-Weoogo, l'oasis verte de
+            Ouagadougou.</p>
           <div class="info-list">
             <div class="info-item">
               <strong>🏛 Architecture &amp; Guichets d'Accueil</strong>
-              <p>Une entrée bâtie dans le style traditionnel burkinabè avec poste d'information, billetterie et accueil des groupes scolaires.</p>
+              <p>Une entrée bâtie dans le style traditionnel burkinabè avec poste d'information, billetterie et accueil
+                des groupes scolaires.</p>
             </div>
             <div class="info-item">
               <strong>⏰ Horaires d'Ouverture</strong>
-              <p>Ouvert tous les jours du lundi au dimanche de <strong>06h00 à 18h00</strong>. Dernier accès autorisé à 17h30.</p>
+              <p>Ouvert tous les jours du lundi au dimanche de <strong>06h00 à 18h00</strong>. Dernier accès autorisé à
+                17h30.</p>
             </div>
             <div class="info-item">
               <strong>🌿 Consignes Écologiques &amp; Sécurité</strong>
-              <p>Espace naturel protégé : sachets plastiques jetables, feux de camp et bruits amplifiés sont strictement prohibés.</p>
+              <p>Espace naturel protégé : sachets plastiques jetables, feux de camp et bruits amplifiés sont strictement
+                prohibés.</p>
             </div>
           </div>
         </div>
@@ -780,26 +804,32 @@
         <div class="landmark-info">
           <div class="eyebrow">Orientation &amp; Cartographie</div>
           <h2>Plan Général &amp; Signalisation</h2>
-          <p class="lede">"La Forêt de la Connaissance" s'étend sur 250 hectares entièrement balisés pour vos promenades et activités sportives.</p>
+          <p class="lede">"La Forêt de la Connaissance" s'étend sur 250 hectares entièrement balisés pour vos promenades
+            et activités sportives.</p>
           <div class="info-list">
             <div class="info-item">
               <strong>🗺 Circuit &amp; Zones Thématiques</strong>
-              <p>Orientation vers le Parc Zoologique, le Jardin Botanique, le Musée d'Histoire Naturelle et les aires de détente.</p>
+              <p>Orientation vers le Parc Zoologique, le Jardin Botanique, le Musée d'Histoire Naturelle et les aires de
+                détente.</p>
             </div>
             <div class="info-item">
               <strong>🏃 Pistes de Randonnée &amp; Parcours de Santé</strong>
-              <p>Pistes cyclables et sentiers de course à pied ombragés de 5 km et 10 km accessibles gratuitement à tous les sportifs.</p>
+              <p>Pistes cyclables et sentiers de course à pied ombragés de 5 km et 10 km accessibles gratuitement à tous
+                les sportifs.</p>
             </div>
             <div class="info-item">
               <strong>ℹ️ Signalétique Botanique &amp; Pédagogique</strong>
-              <p>Panneaux d'interprétation guidant les visiteurs à travers la flore sahélienne et les arbres centenaires préservés.</p>
+              <p>Panneaux d'interprétation guidant les visiteurs à travers la flore sahélienne et les arbres centenaires
+                préservés.</p>
             </div>
           </div>
         </div>
         <div class="landmark-image-box">
-          <img src="images/Parc_Urbain_Bangr-Weoogo_map_sign,_Burkina_Faso,_2008.jpg" alt="Panneau d'orientation et carte du Parc Bangr-Weoogo">
+          <img src="images/Parc_Urbain_Bangr-Weoogo_map_sign,_Burkina_Faso,_2008.jpg"
+            alt="Panneau d'orientation et carte du Parc Bangr-Weoogo">
           <div class="landmark-caption">
-            🗺 <strong>Panneau de Signalisation &amp; Carte Officielle</strong> — Guide complet des sentiers botaniques et zones du parc.
+            🗺 <strong>Panneau de Signalisation &amp; Carte Officielle</strong> — Guide complet des sentiers botaniques
+            et zones du parc.
           </div>
         </div>
       </div>
@@ -986,7 +1016,7 @@
       <div class="venue-grid">
         <div class="venue-card">
           <div class="venue-photo">
-            <img src="images/pexels-lannguyentranm-37254820.jpg" alt="Salle polyvalente du parc">
+            <img src="images/salle polyvalente2.jpg" alt="Salle polyvalente du parc">
           </div>
           <div class="body">
             <h3>Salle polyvalente du parc</h3>
@@ -1027,33 +1057,53 @@
 
       <div style="display:flex; flex-direction:column; gap:20px; max-width:900px; margin:0 auto;">
         <div style="background:var(--card); padding:24px; border-radius:18px; border:1px solid #E9E1CC;">
-          <div style="font-size:11px; font-weight:700; color:var(--baobab); text-transform:uppercase;">Avant 1930 — Origines Traditionnelles</div>
-          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">La Forêt Sacrée Mossi — "Bangr-Weoogo" (Forêt du Savoir)</h3>
-          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Propriété des chefs Mossi, le site constituait un espace sacré protégé abritant des objets et animaux sacrés, servant de lieu d'initiation et de refuge.</p>
+          <div style="font-size:11px; font-weight:700; color:var(--baobab); text-transform:uppercase;">Avant 1930 —
+            Origines Traditionnelles</div>
+          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">La Forêt Sacrée Mossi — "Bangr-Weoogo"
+            (Forêt du Savoir)</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Propriété des chefs Mossi, le site
+            constituait un espace sacré protégé abritant des objets et animaux sacrés, servant de lieu d'initiation et
+            de refuge.</p>
         </div>
 
         <div style="background:var(--card); padding:24px; border-radius:18px; border:1px solid #E9E1CC;">
-          <div style="font-size:11px; font-weight:700; color:var(--canopy); text-transform:uppercase;">Années 1930 — Époque Coloniale</div>
-          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">Le "Bois de Boulogne" de Ouagadougou</h3>
-          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Sans tenir compte de sa sacralité locale, les autorités coloniales françaises en font un parc d'agrément sous le nom de Bois de Boulogne.</p>
+          <div style="font-size:11px; font-weight:700; color:var(--canopy); text-transform:uppercase;">Années 1930 —
+            Époque Coloniale</div>
+          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">Le "Bois de Boulogne" de Ouagadougou
+          </h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Sans tenir compte de sa sacralité locale,
+            les autorités coloniales françaises en font un parc d'agrément sous le nom de Bois de Boulogne.</p>
         </div>
 
         <div style="background:var(--card); padding:24px; border-radius:18px; border:1px solid #E9E1CC;">
-          <div style="font-size:11px; font-weight:700; color:var(--leaf); text-transform:uppercase;">1985 &amp; Janvier 2001 — Renaissance Communale</div>
-          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">Parc Urbain Bangr-Weoogo &amp; Restitution du Nom</h3>
-          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Repris par la Commune de Ouagadougou pour en faire un espace de détente, de sport et de découverte du patrimoine naturel burkinabè.</p>
+          <div style="font-size:11px; font-weight:700; color:var(--leaf); text-transform:uppercase;">1985 &amp; Janvier
+            2001 — Renaissance Communale</div>
+          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">Parc Urbain Bangr-Weoogo &amp;
+            Restitution du Nom</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Repris par la Commune de Ouagadougou pour
+            en faire un espace de détente, de sport et de découverte du patrimoine naturel burkinabè.</p>
         </div>
 
         <div style="background:var(--card); padding:24px; border-radius:18px; border:1px solid #E9E1CC;">
-          <div style="font-size:11px; font-weight:700; color:#2563EB; text-transform:uppercase;">2017 – 2024 — Sanctuaire &amp; Urgence Écologique</div>
-          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">265 Hectares &amp; 18,17% du Potentiel Floristique National</h3>
-          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Véritable réserve de plus de 300 espèces d'oiseaux, le parc a souffert de dégradations qui ont incité l'État à mobiliser un vaste plan de sauvetage.</p>
+          <div style="font-size:11px; font-weight:700; color:#2563EB; text-transform:uppercase;">2017 – 2024 —
+            Sanctuaire &amp; Urgence Écologique</div>
+          <h3 style="font-size:20px; color:var(--canopy-deep); margin:6px 0 8px;">265 Hectares &amp; 18,17% du Potentiel
+            Floristique National</h3>
+          <p style="font-size:14px; color:var(--ink-soft); line-height:1.6;">Véritable réserve de plus de 300 espèces
+            d'oiseaux, le parc a souffert de dégradations qui ont incité l'État à mobiliser un vaste plan de sauvetage.
+          </p>
         </div>
 
-        <div style="background:var(--canopy-deep); color:#fff; padding:26px; border-radius:20px; border:1px solid rgba(255,255,255,0.2); shadow:0 10px 30px rgba(0,0,0,0.2);">
-          <div style="font-size:11px; font-weight:700; color:var(--leaf); text-transform:uppercase;">18 Août 2026 — Chantier Majeur</div>
-          <h3 style="font-size:22px; color:#fff; margin:6px 0 8px;">Le Grand Projet de Réhabilitation (75 Milliards FCFA)</h3>
-          <p style="font-size:14px; color:#CFDAC7; line-height:1.6;">Lancement officiel des travaux par les ministres Mahamadou Sana, Dr Amadou Dicko et les autorités coutumières (Touk Naaba Kango). Phase 1 (5 milliards FCFA sur fonds propres d'ici décembre 2026) : 2 portiques d'entrée monumentaux, salle polyvalente de 750 places, 10 km de clôture neuve et ménagerie pour éléphants, lions et hippopotames.</p>
+        <div
+          style="background:var(--canopy-deep); color:#fff; padding:26px; border-radius:20px; border:1px solid rgba(255,255,255,0.2); shadow:0 10px 30px rgba(0,0,0,0.2);">
+          <div style="font-size:11px; font-weight:700; color:var(--leaf); text-transform:uppercase;">18 Août 2026 —
+            Chantier Majeur</div>
+          <h3 style="font-size:22px; color:#fff; margin:6px 0 8px;">Le Grand Projet de Réhabilitation (75 Milliards
+            FCFA)</h3>
+          <p style="font-size:14px; color:#CFDAC7; line-height:1.6;">Lancement officiel des travaux par les ministres
+            Mahamadou Sana, Dr Amadou Dicko et les autorités coutumières (Touk Naaba Kango). Phase 1 (5 milliards FCFA
+            sur fonds propres d'ici décembre 2026) : 2 portiques d'entrée monumentaux, salle polyvalente de 750 places,
+            10 km de clôture neuve et ménagerie pour éléphants, lions et hippopotames.</p>
         </div>
       </div>
     </div>
@@ -1073,7 +1123,8 @@
       <div class="species-grid">
         <div class="species-card">
           <div class="species-photo">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Dr. Salifou Ouédraogo">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+              alt="Dr. Salifou Ouédraogo">
           </div>
           <div class="body">
             <div class="tag">Direction</div>
@@ -1084,7 +1135,8 @@
 
         <div class="species-card">
           <div class="species-photo">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Mme Aminata Traoré">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80"
+              alt="Mme Aminata Traoré">
           </div>
           <div class="body">
             <div class="tag">Direction</div>
@@ -1095,7 +1147,8 @@
 
         <div class="species-card">
           <div class="species-photo">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Dr. Issouf Sawadogo">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+              alt="Dr. Issouf Sawadogo">
           </div>
           <div class="body">
             <div class="tag">Scientifique</div>
@@ -1106,7 +1159,8 @@
 
         <div class="species-card">
           <div class="species-photo">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="M. Abdoulaye Compaoré">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80"
+              alt="M. Abdoulaye Compaoré">
           </div>
           <div class="body">
             <div class="tag">Sécurité</div>
@@ -1124,43 +1178,62 @@
       <div style="text-align:center; max-width:600px; margin:0 auto 40px;">
         <div class="eyebrow" style="color:var(--leaf); justify-content:center;">Médiathèque Officielle</div>
         <h2 style="color:#fff; font-size:32px; margin-top:8px;">Photothèque &amp; Vidéothèque</h2>
-        <p style="color:#C9D3C0; font-size:15px; margin-top:12px;">Explorez la galerie photo HD et les documentaires immersifs du parc.</p>
+        <p style="color:#C9D3C0; font-size:15px; margin-top:12px;">Explorez la galerie photo HD et les documentaires
+          immersifs du parc.</p>
       </div>
 
       <!-- EMBEDDED YOUTUBE PLAYER -->
-      <div style="margin-bottom:30px; border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.15); background:#000;">
-        <iframe width="100%" height="450" src="https://www.youtube.com/embed/5Nqin_BzxJM" title="Documentaire Bangr-Weoogo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block; width:100%;"></iframe>
+      <div
+        style="margin-bottom:30px; border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.15); background:#000;">
+        <iframe width="100%" height="450" src="https://www.youtube.com/embed/5Nqin_BzxJM"
+          title="Documentaire Bangr-Weoogo" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen style="display:block; width:100%;"></iframe>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
-        <a href="https://youtu.be/5Nqin_BzxJM?si=tqHnAkMjpMacC7Xo" target="_blank" style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
-          <img src="https://img.youtube.com/vi/5Nqin_BzxJM/hqdefault.jpg" style="width:100%; height:140px; object-fit:cover;">
+        <a href="https://youtu.be/5Nqin_BzxJM?si=tqHnAkMjpMacC7Xo" target="_blank"
+          style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
+          <img src="https://img.youtube.com/vi/5Nqin_BzxJM/hqdefault.jpg"
+            style="width:100%; height:140px; object-fit:cover;">
           <div style="padding:14px;">
-            <div style="font-size:10px; font-weight:600; color:var(--baobab); text-transform:uppercase;">Documentaire Officiel</div>
+            <div style="font-size:10px; font-weight:600; color:var(--baobab); text-transform:uppercase;">Documentaire
+              Officiel</div>
             <h4 style="font-size:14px; margin-top:4px; font-family:'Fraunces',serif;">Au cœur de Bangr-Weoogo</h4>
           </div>
         </a>
 
-        <a href="https://youtu.be/fHhsMtBL1ik?si=Q0vR4Nz-SbRNG8ga" target="_blank" style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
-          <img src="https://img.youtube.com/vi/fHhsMtBL1ik/hqdefault.jpg" style="width:100%; height:140px; object-fit:cover;">
+        <a href="https://youtu.be/fHhsMtBL1ik?si=Q0vR4Nz-SbRNG8ga" target="_blank"
+          style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
+          <img src="https://img.youtube.com/vi/fHhsMtBL1ik/hqdefault.jpg"
+            style="width:100%; height:140px; object-fit:cover;">
           <div style="padding:14px;">
-            <div style="font-size:10px; font-weight:600; color:var(--canopy); text-transform:uppercase;">Immersion Sauvage</div>
-            <h4 style="font-size:14px; margin-top:4px; font-family:'Fraunces',serif;">Faune &amp; Flore de Bangr-Weoogo</h4>
+            <div style="font-size:10px; font-weight:600; color:var(--canopy); text-transform:uppercase;">Immersion
+              Sauvage</div>
+            <h4 style="font-size:14px; margin-top:4px; font-family:'Fraunces',serif;">Faune &amp; Flore de Bangr-Weoogo
+            </h4>
           </div>
         </a>
 
-        <a href="https://youtu.be/DT4ShqclnRQ?si=OTeRJ_QMxnJG3LGY" target="_blank" style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
-          <img src="https://img.youtube.com/vi/DT4ShqclnRQ/hqdefault.jpg" style="width:100%; height:140px; object-fit:cover;">
+        <a href="https://youtu.be/DT4ShqclnRQ?si=OTeRJ_QMxnJG3LGY" target="_blank"
+          style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
+          <img src="https://img.youtube.com/vi/DT4ShqclnRQ/hqdefault.jpg"
+            style="width:100%; height:140px; object-fit:cover;">
           <div style="padding:14px;">
-            <div style="font-size:10px; font-weight:600; color:var(--leaf); text-transform:uppercase;">Visite Virtuelle 4K</div>
-            <h4 style="font-size:14px; margin-top:4px; font-family:'Fraunces',serif;">Sentiers Botaniques &amp; Arbres</h4>
+            <div style="font-size:10px; font-weight:600; color:var(--leaf); text-transform:uppercase;">Visite Virtuelle
+              4K</div>
+            <h4 style="font-size:14px; margin-top:4px; font-family:'Fraunces',serif;">Sentiers Botaniques &amp; Arbres
+            </h4>
           </div>
         </a>
 
-        <a href="https://youtu.be/ZvGrpXJSUfw?si=Hl5MVSbgnX0do7jK" target="_blank" style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
-          <img src="https://img.youtube.com/vi/ZvGrpXJSUfw/hqdefault.jpg" style="width:100%; height:140px; object-fit:cover;">
+        <a href="https://youtu.be/ZvGrpXJSUfw?si=Hl5MVSbgnX0do7jK" target="_blank"
+          style="background:var(--harmattan); border-radius:16px; overflow:hidden; color:var(--ink); text-decoration:none; display:block;">
+          <img src="images/DOMAINE_DU_CROCO.jpg"
+            style="width:100%; height:140px; object-fit:cover;">
           <div style="padding:14px;">
-            <div style="font-size:10px; font-weight:600; color:var(--baobab); text-transform:uppercase;">Conservation &amp; Culture</div>
+            <div style="font-size:10px; font-weight:600; color:var(--baobab); text-transform:uppercase;">Conservation
+              &amp; Culture</div>
             <h4 style="font-size:14px; margin-top:4px; font-family:'Fraunces',serif;">Patrimoine Naturel Préservé</h4>
           </div>
         </a>

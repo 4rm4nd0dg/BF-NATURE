@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { SpeciesCard } from '../../components/SpeciesCard';
+import { Breadcrumb } from '../../components/Breadcrumb';
 import { fetchSiteEspeces, Espece } from '../../lib/api';
 import { Filter, Search, TreePine, PawPrint } from 'lucide-react';
 
@@ -251,6 +252,8 @@ export default function FauneFlorePage() {
   return (
     <div className="py-12 bg-harmattan min-h-screen">
       <div className="max-w-[1180px] mx-auto px-6">
+        <Breadcrumb items={[{ label: 'Faune & Flore' }]} />
+
         {/* Header */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-widest text-leaf inline-block mb-2">

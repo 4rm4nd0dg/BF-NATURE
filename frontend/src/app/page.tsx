@@ -5,7 +5,11 @@ export const dynamic = 'force-dynamic';
 
 import { CanopyLine } from '../components/CanopyLine';
 import { SpeciesCard } from '../components/SpeciesCard';
-import { ArrowRight, Calendar, Users, ShieldCheck, Sparkles, MapPin } from 'lucide-react';
+import { FAQSection } from '../components/FAQSection';
+import { Testimonials } from '../components/Testimonials';
+import { TeamSection } from '../components/TeamSection';
+import { ImpactCaseStudies } from '../components/ImpactCaseStudies';
+import { ArrowRight, Calendar, Users, ShieldCheck, Sparkles, MapPin, Navigation, Bus, Car } from 'lucide-react';
 import { fetchSiteBySlug } from '../lib/api';
 
 export default async function HomePage() {
@@ -58,12 +62,12 @@ export default async function HomePage() {
 
   return (
     <div>
-      {/* HERO SECTION */}
+      {/* HERO SECTION - ABOVE THE FOLD CTA */}
       <section className="bg-canopy text-harmattan relative overflow-hidden">
         <div className="max-w-[1180px] mx-auto px-6 pt-16 pb-12 relative z-20">
           <div className="inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-leaf mb-6">
             <span className="w-5 h-[1.5px] bg-leaf inline-block" />
-            Parc urbain — Ouagadougou
+            Parc urbain — Ouagadougou, Burkina Faso
           </div>
 
           <h1 className="font-serif font-normal text-4xl sm:text-5xl md:text-6xl max-w-2xl leading-[1.1] text-white">
@@ -71,7 +75,7 @@ export default async function HomePage() {
           </h1>
 
           <p className="font-sans text-base sm:text-lg text-[#CFDAC7] max-w-lg mt-6 leading-relaxed">
-            250 hectares de nature préservée à deux pas du centre-ville. Découvrez la faune, la flore, et réservez votre visite ou votre événement au poumon vert de Ouaga.
+            265 hectares de nature préservée à deux pas du centre-ville. Découvrez la faune, la flore, et réservez votre visite ou votre événement au poumon vert de Ouagadougou.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-9">
@@ -85,7 +89,7 @@ export default async function HomePage() {
               href="/faune-flore"
               className="border border-harmattan/30 text-harmattan px-7 py-3.5 rounded-full font-medium text-sm hover:bg-white/10 transition"
             >
-              Découvrir le parc
+              Découvrir la Faune &amp; Flore
             </Link>
           </div>
         </div>
@@ -98,212 +102,146 @@ export default async function HomePage() {
       <section className="bg-harmattan py-4">
         <div className="max-w-[1180px] mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#DED2B4] rounded-2xl overflow-hidden border border-[#DED2B4]">
-            <div className="bg-harmattan p-6 text-center md:text-left">
-              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">250 ha</div>
-              <div className="text-xs text-ink-soft mt-1">Superficie du parc</div>
+            <div className="bg-[#F7F3E8] p-6 text-center">
+              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">265 ha</div>
+              <div className="text-xs text-ink-soft mt-1">Superficie forestière</div>
             </div>
-            <div className="bg-harmattan p-6 text-center md:text-left">
-              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">140+</div>
-              <div className="text-xs text-ink-soft mt-1">Espèces recensées</div>
+            <div className="bg-[#F7F3E8] p-6 text-center">
+              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">350+</div>
+              <div className="text-xs text-ink-soft mt-1">Espèces répertoriées</div>
             </div>
-            <div className="bg-harmattan p-6 text-center md:text-left">
-              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">35</div>
-              <div className="text-xs text-ink-soft mt-1">Agents et guides</div>
+            <div className="bg-[#F7F3E8] p-6 text-center">
+              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">500 F</div>
+              <div className="text-xs text-ink-soft mt-1">Billet d'entrée adulte</div>
             </div>
-            <div className="bg-harmattan p-6 text-center md:text-left">
-              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">60k</div>
-              <div className="text-xs text-ink-soft mt-1">Visiteurs par an</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 1 : PORTAIL D'ENTRÉE PRINCIPALE */}
-      <section className="py-16 bg-harmattan">
-        <div className="max-w-[1180px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="bg-card rounded-2xl overflow-hidden border border-[#E9E1CC] shadow-md">
-              <img
-                src="/images/Parc_Urbain_Bangr-Weoogo_entrance,_Burkina_Faso,_2008 (1).jpg"
-                alt="Portail d'entrée principale du Parc Bangr-Weoogo"
-                className="w-full h-80 object-cover"
-              />
-              <div className="p-4 text-xs text-ink-soft bg-[#FAF6EC] border-t border-[#E9E1CC]">
-                📍 <strong>Portail Monumental d'Entrée (Avenue Charles de Gaulle)</strong> — Guichets d'accueil, contrôle d'accès et billetterie du Parc Bangr-Weoogo.
-              </div>
-            </div>
-
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-baobab mb-2">
-                <span className="w-4 h-0.5 bg-baobab" /> Accueil &amp; Accès Principal
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium text-canopy-deep mb-3">
-                Le Portail d'Entrée du Parc
-              </h2>
-              <p className="text-sm text-ink-soft leading-relaxed mb-6">
-                Bienvenue à l'entrée officielle de la forêt classée de Bangr-Weoogo. Un lieu emblématique qui marque la transition entre l'animation urbaine de Ouagadougou et le calme de la nature.
-              </p>
-
-              <div className="space-y-3.5">
-                <div className="bg-card p-4 rounded-xl border border-[#E9E1CC]">
-                  <strong className="text-sm text-canopy block font-medium">🏛 Architecture &amp; Guichets d'Accueil</strong>
-                  <p className="text-xs text-ink-soft mt-1 leading-normal">
-                    Entrée construite selon l'architecture traditionnelle burkinabè, abritant le poste des guides assermentés et le centre d'information touristique.
-                  </p>
-                </div>
-
-                <div className="bg-card p-4 rounded-xl border border-[#E9E1CC]">
-                  <strong className="text-sm text-canopy block font-medium">⏰ Horaires d'Ouverture Officiels</strong>
-                  <p className="text-xs text-ink-soft mt-1 leading-normal">
-                    Ouvert tous les jours de <strong>06h00 à 18h00</strong>. Les dernières entrées sont enregistrées jusqu'à 17h30.
-                  </p>
-                </div>
-
-                <div className="bg-card p-4 rounded-xl border border-[#E9E1CC]">
-                  <strong className="text-sm text-canopy block font-medium">🌿 Consignes Environnementales</strong>
-                  <p className="text-xs text-ink-soft mt-1 leading-normal">
-                    Réserve naturelle protégée : l'usage de sachets plastiques jetables, feux de camp et bruits excessifs y est strictement interdit.
-                  </p>
-                </div>
-              </div>
+            <div className="bg-[#F7F3E8] p-6 text-center">
+              <div className="font-serif text-3xl md:text-4xl text-canopy font-medium">100%</div>
+              <div className="text-xs text-ink-soft mt-1">Paiement Mobile Money</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 2 : PLAN D'ORIENTATION ET SIGNALISATION */}
-      <section className="py-16 bg-sand border-y border-[#DED2B4]">
-        <div className="max-w-[1180px] mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="order-2 md:order-1">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-baobab mb-2">
-                <span className="w-4 h-0.5 bg-baobab" /> Orientation &amp; Cartographie
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium text-canopy-deep mb-3">
-                Plan Général &amp; Signalisation
-              </h2>
-              <p className="text-sm text-ink-soft leading-relaxed mb-6">
-                « La Forêt de la Connaissance » s'étend sur 250 hectares entièrement aménagés avec une signalétique bilingue pour vous guider en toute sécurité.
-              </p>
-
-              <div className="space-y-3.5">
-                <div className="bg-card p-4 rounded-xl border border-[#E9E1CC]">
-                  <strong className="text-sm text-canopy block font-medium">🗺 Zones &amp; Circuits Thématiques</strong>
-                  <p className="text-xs text-ink-soft mt-1 leading-normal">
-                    Signalisation claire vers la Réserve Zoologique, le Jardin Botanique, le Musée d'Histoire Naturelle et les aires de détente.
-                  </p>
-                </div>
-
-                <div className="bg-card p-4 rounded-xl border border-[#E9E1CC]">
-                  <strong className="text-sm text-canopy block font-medium">🏃 Pistes de Randonnée &amp; Santé</strong>
-                  <p className="text-xs text-ink-soft mt-1 leading-normal">
-                    Parcours de santé et sentiers de course de 5 km et 10 km sous la canopée, très prisés par les sportifs dès l'aube.
-                  </p>
-                </div>
-
-                <div className="bg-card p-4 rounded-xl border border-[#E9E1CC]">
-                  <strong className="text-sm text-canopy block font-medium">ℹ️ Panneaux d'Interprétation Botanique</strong>
-                  <p className="text-xs text-ink-soft mt-1 leading-normal">
-                    Plaques explicatives identifiant les arbres sacrés, les plantes médicinales et les habitats écologiques remarquables.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-2xl overflow-hidden border border-[#E9E1CC] shadow-md order-1 md:order-2">
-              <img
-                src="/images/Parc_Urbain_Bangr-Weoogo_map_sign,_Burkina_Faso,_2008.jpg"
-                alt="Panneau d'orientation et carte du Parc Bangr-Weoogo"
-                className="w-full h-80 object-cover"
-              />
-              <div className="p-4 text-xs text-ink-soft bg-[#FAF6EC] border-t border-[#E9E1CC]">
-                🗺 <strong>Plan &amp; Signalisation Officielle du Parc</strong> — Carte géolocalisée et repères d'orientation pour promeneurs et sportifs.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAUNE & FLORE PREVIEW */}
+      {/* ESPÈCES PHARES */}
       <section className="py-20">
         <div className="max-w-[1180px] mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-baobab mb-2">
-                <span className="w-4 h-0.5 bg-baobab" /> Faune &amp; flore
+                <span className="w-4 h-0.5 bg-baobab" /> Biodiversité remarquable
               </div>
               <h2 className="font-serif text-3xl md:text-4xl font-medium text-canopy-deep">
-                Une biodiversité à découvrir, fiche par fiche
+                Espèces phares du parc
               </h2>
             </div>
-            <div className="flex flex-col items-start md:items-end gap-2">
-              <p className="text-sm text-ink-soft max-w-xs">
-                Chaque espèce a sa propre fiche : description, habitat, statut de conservation.
-              </p>
-              <Link
-                href="/faune-flore"
-                className="text-xs font-semibold text-canopy hover:text-baobab flex items-center gap-1 mt-1 transition"
-              >
-                Voir toute la biodiversité ({site?.especes?.length || 6} espèces) <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
+            <Link
+              href="/faune-flore"
+              className="text-sm font-medium text-canopy hover:text-canopy-deep flex items-center gap-1.5 transition"
+            >
+              Voir le catalogue complet <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
-            {speciesList.map((esp) => (
-              <SpeciesCard key={esp.id} espece={esp} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {speciesList.map((espece) => (
+              <SpeciesCard key={espece.id} espece={espece} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* BILLETTERIE SECTION */}
-      <section className="py-12">
-        <div className="max-w-[1180px] mx-auto px-6">
-          <div className="bg-canopy-deep text-harmattan rounded-[28px] p-8 md:p-14 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-leaf mb-3">
-                Billetterie officielle
-              </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-white font-medium max-w-sm leading-tight">
-                Réservez votre visite en quelques clics
-              </h2>
-              <p className="text-sm text-[#C9D3C0] mt-4 leading-relaxed max-w-md">
-                Choisissez votre date, votre type de billet, et payez directement par Orange Money ou Moov Money. Recevez votre billet numérique instantané avec QR code.
-              </p>
+      {/* ÉTUDES DE CAS & IMPACT ENVIRONNEMENTAL */}
+      <div className="max-w-[1180px] mx-auto px-6">
+        <ImpactCaseStudies />
+      </div>
 
-              <div className="mt-6 flex flex-wrap gap-4 text-xs text-[#C9D3C0]">
-                <div className="flex items-center gap-2 bg-white/10 px-3.5 py-2 rounded-full">
-                  <ShieldCheck className="w-4 h-4 text-leaf" /> Paiement sécurisé
+      {/* TARIFS & BILLETTERIE */}
+      <section className="py-20 bg-sand/30">
+        <div className="max-w-[1180px] mx-auto px-6">
+          <div className="text-center max-w-xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-baobab mb-2">
+              <span className="w-4 h-0.5 bg-baobab" /> Billetterie en ligne
+            </div>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-canopy-deep">
+              Réservez vos tickets d'entrée
+            </h2>
+            <p className="text-sm text-ink-soft mt-3">
+              Gagnez du temps à l'entrée. Recevez instantanément votre billet par QR Code sur votre smartphone.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-card rounded-2xl p-8 border border-[#E9E1CC] shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-semibold uppercase text-leaf tracking-wider">Pass Visiteur</span>
+                <h3 className="font-serif text-2xl text-canopy font-medium mt-1">Billet Individuel</h3>
+                <div className="mt-4 flex items-baseline">
+                  <span className="font-serif text-4xl font-bold text-canopy-deep">500</span>
+                  <span className="text-sm font-medium text-ink-soft ml-1">FCFA / personne</span>
                 </div>
-                <div className="flex items-center gap-2 bg-white/10 px-3.5 py-2 rounded-full">
-                  <Sparkles className="w-4 h-4 text-baobab" /> QR Code instantané
-                </div>
+                <ul className="mt-6 space-y-3 text-xs text-ink-soft">
+                  <li className="flex items-center gap-2">✓ Accès complet à la forêt classée</li>
+                  <li className="flex items-center gap-2">✓ Parcours pédestres et d'observation</li>
+                  <li className="flex items-center gap-2">✓ Valable toute la journée</li>
+                </ul>
+              </div>
+              <div className="mt-8">
+                <Link
+                  href="/billetterie"
+                  className="bg-canopy hover:bg-canopy-deep text-white w-full py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition"
+                >
+                  Acheter ce billet <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
 
-            {/* Ticket Preview Box */}
-            <div className="bg-harmattan text-ink rounded-2xl p-6 shadow-xl border border-sand">
-              <div className="flex justify-between items-center pb-3 border-b border-[#E4DAC2]">
-                <span className="text-xs text-ink-soft">Tarif Billet Individuel</span>
-                <span className="font-semibold text-sm text-canopy">1 500 FCFA / pers</span>
+            <div className="bg-card rounded-2xl p-8 border-2 border-baobab shadow-md flex flex-col justify-between relative">
+              <span className="absolute -top-3 right-6 bg-baobab text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Recommandé
+              </span>
+              <div>
+                <span className="text-xs font-semibold uppercase text-baobab tracking-wider">Pass Groupe</span>
+                <h3 className="font-serif text-2xl text-canopy font-medium mt-1">Tarif Scolaire &amp; Asso</h3>
+                <div className="mt-4 flex items-baseline">
+                  <span className="font-serif text-4xl font-bold text-canopy-deep">250</span>
+                  <span className="text-sm font-medium text-ink-soft ml-1">FCFA / élève</span>
+                </div>
+                <ul className="mt-6 space-y-3 text-xs text-ink-soft">
+                  <li className="flex items-center gap-2">✓ À partir de 10 personnes</li>
+                  <li className="flex items-center gap-2">✓ Visite guidée pédagogique incluse</li>
+                  <li className="flex items-center gap-2">✓ Accès au Musée des Animaux Naturalisés</li>
+                </ul>
               </div>
-              <div className="flex justify-between items-center py-3 border-b border-[#E4DAC2]">
-                <span className="text-xs text-ink-soft">Lieu</span>
-                <span className="text-xs font-medium text-ink flex items-center gap-1">
-                  <MapPin className="w-3.5 h-3.5 text-baobab" /> Ouagadougou, Secteur 13
-                </span>
-              </div>
-              <div className="flex justify-between items-center py-3 border-b border-[#E4DAC2]">
-                <span className="text-xs text-ink-soft">Paiement accepté</span>
-                <span className="text-xs font-semibold text-leaf">Orange Money &amp; Moov Money</span>
-              </div>
-              <div className="mt-6">
+              <div className="mt-8">
                 <Link
                   href="/billetterie"
-                  className="bg-baobab hover:bg-[#966226] text-white w-full py-3.5 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition"
+                  className="bg-baobab hover:bg-[#966226] text-white w-full py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition"
                 >
-                  Accéder à la billetterie <ArrowRight className="w-4 h-4" />
+                  Réserver pour un groupe <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-card rounded-2xl p-8 border border-[#E9E1CC] shadow-sm flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-semibold uppercase text-leaf tracking-wider">Pass Famille</span>
+                <h3 className="font-serif text-2xl text-canopy font-medium mt-1">Pack Famille (4 pers)</h3>
+                <div className="mt-4 flex items-baseline">
+                  <span className="font-serif text-4xl font-bold text-canopy-deep">1 500</span>
+                  <span className="text-sm font-medium text-ink-soft ml-1">FCFA total</span>
+                </div>
+                <ul className="mt-6 space-y-3 text-xs text-ink-soft">
+                  <li className="flex items-center gap-2">✓ Entrée pour 2 adultes + 2 enfants</li>
+                  <li className="flex items-center gap-2">✓ Accès à l'aire de jeu &amp; pique-nique</li>
+                  <li className="flex items-center gap-2">✓ Plan illustré du parc offert</li>
+                </ul>
+              </div>
+              <div className="mt-8">
+                <Link
+                  href="/billetterie"
+                  className="bg-canopy hover:bg-canopy-deep text-white w-full py-3 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition"
+                >
+                  Acheter le pass famille <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>
@@ -330,8 +268,12 @@ export default async function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card rounded-2xl overflow-hidden border border-[#E9E1CC] shadow-sm flex flex-col justify-between">
-              <div className="h-48 bg-gradient-to-br from-[#D8C9A3] to-[#C9B888] flex items-center justify-center text-[#5B4E2E] font-medium text-sm p-6 text-center">
-                Salle polyvalente du parc (120 personnes)
+              <div className="relative h-48 bg-canopy-deep/80 overflow-hidden">
+                <img
+                  src="/images/salle_polyvalente2.jpg"
+                  alt="Salle polyvalente du parc (120 personnes)"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="font-serif text-xl font-medium text-ink">Salle polyvalente couverte</h3>
@@ -381,23 +323,119 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* CARTE & ITINÉRAIRE D'ACCÈS */}
+      <section className="py-16 bg-harmattan">
+        <div className="max-w-[1180px] mx-auto px-6">
+          <div className="bg-sand/40 border border-sand rounded-3xl p-8 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <span className="px-4 py-1.5 bg-leaf/20 text-canopy font-bold text-xs rounded-full uppercase tracking-wider">
+                Accès &amp; Localisation
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-canopy mt-3">
+                Comment venir au Parc Bangr-Weoogo ?
+              </h2>
+              <p className="text-ink/80 text-sm md:text-base mt-3 leading-relaxed">
+                Situé dans la commune de Ouagadougou (Secteur 12), le parc est facilement accessible depuis l'Avenue Pascal Zagré ou la Route de Somgandé.
+              </p>
+
+              <div className="mt-6 space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-baobab shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-canopy text-sm">Coordonnées GPS</h4>
+                    <p className="text-xs text-ink/70">12.3914° N, 1.4981° O — Secteur 12, Ouagadougou</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Bus className="w-5 h-5 text-canopy shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-canopy text-sm">Transport en Commun (SOTRACO)</h4>
+                    <p className="text-xs text-ink/70">Lignes de bus N° 2 et 6 — Arrêt "Entrée Principale Bangr-Weoogo"</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Car className="w-5 h-5 text-leaf shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="font-bold text-canopy text-sm">Parking &amp; Véhicules</h4>
+                    <p className="text-xs text-ink/70">Parking gratuit et surveillé disponible à l'entrée Sud.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <a
+                  href="https://maps.google.com/?q=Parc+Urbain+Bangr-Weoogo+Ouagadougou"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 bg-canopy hover:bg-canopy-deep text-harmattan font-bold rounded-xl shadow-md text-sm transition-all"
+                >
+                  <Navigation className="w-4 h-4" />
+                  <span>Ouvrir dans Google Maps (Itinéraire)</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Représentation visuelle de la carte du parc */}
+            <div className="relative h-80 rounded-2xl overflow-hidden border-2 border-sand shadow-inner bg-canopy-deep/90 flex items-center justify-center p-6 text-center">
+              <img
+                src="/images/Parc_Urbain_Bangr-Weoogo_map_sign,_Burkina_Faso,_2008.jpg"
+                alt="Carte de localisation du Parc Urbain Bangr-Weoogo à Ouagadougou"
+                className="absolute inset-0 w-full h-full object-cover opacity-40"
+              />
+              <div className="relative z-10 bg-canopy-deep/90 p-6 rounded-2xl border border-leaf/40 backdrop-blur-sm max-w-xs">
+                <span className="text-3xl mb-2 block">📍</span>
+                <h3 className="font-serif font-bold text-harmattan text-lg">Parc Urbain Bangr-Weoogo</h3>
+                <p className="text-xs text-leaf font-medium mt-1">Burkina Faso - Ouagadougou</p>
+                <span className="inline-block mt-3 text-[11px] bg-baobab text-harmattan px-3 py-1 rounded-full font-bold">
+                  Ouvert aujourd'hui : 06h00 – 18h30
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION ÉQUIPE ET GUIDES */}
+      <div className="max-w-[1180px] mx-auto px-6">
+        <TeamSection />
+      </div>
+
+      {/* SECTION AVIS CLIENTS */}
+      <div className="max-w-[1180px] mx-auto px-6">
+        <Testimonials />
+      </div>
+
+      {/* SECTION FAQ */}
+      <div className="max-w-[1180px] mx-auto px-6">
+        <FAQSection />
+      </div>
+
       {/* CITATION SENSIBILISATION */}
       <section className="pb-24">
         <div className="max-w-[1180px] mx-auto px-6">
-          <div className="bg-sand rounded-[28px] p-10 md:p-16 text-center border border-[#DED2B4]">
-            <p className="font-serif italic text-2xl md:text-3xl text-canopy-deep max-w-2xl mx-auto leading-relaxed">
-              « Chaque arbre planté ici est un souffle pour Ouagadougou. Préserver Bangr-Weoogo, c'est préserver notre part d'air pur. »
-            </p>
-            <div className="mt-6 text-xs text-ink-soft font-medium uppercase tracking-wider">
-              Espace sensibilisation — écogestes &amp; préservation des espaces verts du Burkina
-            </div>
-            <div className="mt-6">
-              <Link
-                href="/sensibilisation"
-                className="inline-block bg-canopy text-white px-6 py-2.5 rounded-full text-xs font-medium hover:bg-canopy-deep transition"
-              >
-                Lire nos articles d'écologie
-              </Link>
+          <div className="relative rounded-[28px] p-10 md:p-16 text-center border border-leaf/30 overflow-hidden bg-canopy-deep text-harmattan shadow-xl">
+            <img
+              src="/images/aller.webp"
+              alt="Arrière-plan sensibilisation"
+              className="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none"
+            />
+            <div className="relative z-10">
+              <p className="font-serif italic text-2xl md:text-3xl text-white max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                « Chaque arbre planté ici est un souffle pour Ouagadougou. Préserver Bangr-Weoogo, c'est préserver notre part d'air pur. »
+              </p>
+              <div className="mt-6 text-xs text-leaf font-bold uppercase tracking-wider">
+                Espace sensibilisation — écogestes &amp; préservation des espaces verts du Burkina
+              </div>
+              <div className="mt-6">
+                <Link
+                  href="/sensibilisation"
+                  className="inline-block bg-baobab hover:bg-[#966226] text-white px-6 py-2.5 rounded-full text-xs font-semibold transition shadow-lg"
+                >
+                  Lire nos articles d'écologie
+                </Link>
+              </div>
             </div>
           </div>
         </div>

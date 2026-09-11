@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { PaymentModal, PaymentDetails, PaymentProviderLogos } from '../../components/PaymentModal';
+import { Breadcrumb } from '../../components/Breadcrumb';
 import { createReservationApi, Reservation } from '../../lib/api';
 import { Calendar, Users, QrCode, ShieldCheck, Ticket, CheckCircle2, MapPin, Download, Sparkles, CreditCard, Lock } from 'lucide-react';
 
@@ -68,6 +69,9 @@ export default function BilletteriePage() {
   return (
     <div className="py-12 bg-harmattan min-h-screen">
       <div className="max-w-[1180px] mx-auto px-6">
+        {/* Fil d'Ariane SEO */}
+        <Breadcrumb items={[{ label: 'Billetterie' }]} />
+
         {/* Header */}
         <div className="mb-10 text-center max-w-2xl mx-auto">
           <span className="text-xs font-semibold uppercase tracking-widest text-leaf inline-block mb-2 bg-leaf/10 border border-leaf/30 px-3 py-1 rounded-full">

@@ -16,7 +16,9 @@ import {
   createEspece,
   deleteEspece
 } from '../controllers/adminController.js';
+import { handlePaymentWebhook } from '../controllers/webhookController.js';
 import { requireAuth, requireRole } from '../middleware/authMiddleware.js';
+import { authLimiter } from '../index.js';
 
 const router = Router();
 
@@ -36,14 +38,17 @@ router.get('/locations/:id', getDemandeLocationById);
 router.patch('/locations/:id', updateDemandeLocationStatus);
 router.post('/locations/:id/pay', payLocationDemande);
 
-// Routes Authentification
-router.post('/auth/register', register);
-router.post('/auth/login', login);
+// Routes Authentification sécurisées avec limitation de débit (Anti Brute-Force)
+router.post('/auth/register', authLimiter, register);
+router.post('/auth/login', authLimiter, login);
+
+// Webhook de paiement sécurisé avec signature HMAC SHA-256
+router.post('/webhooks/payment', handlePaymentWebhook);
 
 // Routes publiques Contenus de sensibilisation
 router.get('/contenus', getContenusSensibilisation);
 
-// Routes Admin Protégées (Rôles : gestionnaire, super_admin)
+// Routes Admin Protégées (Rôles : gestionnaire, super_admin avec vérification serveur)
 router.post('/admin/contenus', requireAuth, requireRole('gestionnaire', 'super_admin'), createContenuSensibilisation);
 router.get('/admin/reservations', requireAuth, requireRole('gestionnaire', 'super_admin'), getAdminReservations);
 router.get('/admin/locations', requireAuth, requireRole('gestionnaire', 'super_admin'), getAdminLocations);
