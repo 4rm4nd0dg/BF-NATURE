@@ -97,11 +97,7 @@ docker-compose up -d
 
 ---
 
-## 🔑 Identifiants d'Accès Administration (Portail Admin - `http://localhost:3001`)
-
-- **E-mail** : `admin@bangrweoogo.bf`
-- **Mot de passe** : `AdminPassword123!`
-
+## 
 ---
 
 ## 📌 Endpoints API REST Centralisés
