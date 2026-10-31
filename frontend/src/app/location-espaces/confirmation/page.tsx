@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
 import type { Metadata } from 'next';
+import { ClipboardList } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Demande Enregistrée — Location d\'Espaces Bangr-Weoogo',
@@ -14,7 +15,7 @@ export default function LocationConfirmationPage() {
 
       <div className="bg-harmattan p-8 md:p-12 rounded-3xl border border-sand shadow-lg text-center space-y-6">
         <div className="w-20 h-20 bg-baobab/20 text-baobab rounded-full flex items-center justify-center mx-auto text-4xl">
-          📋
+          <ClipboardList className="w-9 h-9" aria-hidden="true" />
         </div>
 
         <h1 className="text-3xl md:text-4xl font-serif font-bold text-canopy">

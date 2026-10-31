@@ -2,23 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Breadcrumb } from '../../components/Breadcrumb';
-import {
-  BookOpen,
-  Newspaper,
-  Sparkles,
-  Search,
-  CheckCircle2,
-  Trophy,
-  RotateCcw,
-  Leaf,
-  Award,
-  HelpCircle,
-  Gamepad2,
-  Brain,
-  Share2,
-  ExternalLink,
-  ShieldAlert,
-} from 'lucide-react';
+import { BookOpen, Newspaper, Sparkles, Search, CheckCircle2, Trophy, RotateCcw, Leaf, Award, HelpCircle, Gamepad2, Brain, Share2, ExternalLink, ShieldAlert, PartyPopper, Lightbulb } from 'lucide-react';
 
 interface PressArticle {
   id: string;
@@ -407,13 +391,13 @@ export default function SensibilisationPage() {
                 >
                   <div>
                     <div className="relative h-48 overflow-hidden">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={art.imageUrl}
                         alt={art.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <span
-                        className={`absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white shadow-sm ${
+                        className={`absolute top-3 left-3 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white shadow-sm ${
                           art.category === 'presse'
                             ? 'bg-baobab'
                             : art.category === 'ecologie'
@@ -430,7 +414,7 @@ export default function SensibilisationPage() {
                     </div>
 
                     <div className="p-6">
-                      <div className="flex items-center justify-between text-[11px] text-ink-soft mb-2">
+                      <div className="flex items-center justify-between text-xs text-ink-soft mb-2">
                         <span className="font-semibold text-canopy">{art.source}</span>
                         <span>{art.date}</span>
                       </div>
@@ -444,7 +428,7 @@ export default function SensibilisationPage() {
                   </div>
 
                   <div className="p-6 pt-0 border-t border-sand/30 flex items-center justify-between mt-4">
-                    <span className="text-[11px] text-leaf font-medium">{art.readTime}</span>
+                    <span className="text-xs text-leaf font-medium">{art.readTime}</span>
                     <button
                       onClick={() => setActiveArticleModal(art)}
                       className="text-xs font-bold text-canopy hover:text-baobab flex items-center gap-1 transition"
@@ -510,14 +494,14 @@ export default function SensibilisationPage() {
                 {selectedAnswer !== null && (
                   <div className="p-4 bg-sand/40 rounded-2xl border border-sand text-xs text-canopy leading-relaxed space-y-3 animate-in fade-in">
                     <p className="font-medium">
-                      💡 <strong>Explication :</strong> {QUIZ_QUESTIONS[quizIndex].explanation}
+                      <Lightbulb className="w-4 h-4 inline -mt-0.5 mr-1 text-baobab" aria-hidden="true" /><strong>Explication :</strong> {QUIZ_QUESTIONS[quizIndex].explanation}
                     </p>
                     <button
                       onClick={nextQuizQuestion}
                       className="w-full py-3 bg-canopy hover:bg-canopy-deep text-white font-bold rounded-xl transition text-xs flex items-center justify-center gap-2"
                     >
                       <span>
-                        {quizIndex < QUIZ_QUESTIONS.length - 1 ? 'Question Suivante →' : 'Voir le Résultat Final 🎉'}
+                        {quizIndex < QUIZ_QUESTIONS.length - 1 ? 'Question Suivante →' : 'Voir le Résultat Final'}
                       </span>
                     </button>
                   </div>
@@ -526,7 +510,7 @@ export default function SensibilisationPage() {
             ) : (
               <div className="text-center py-6 space-y-6">
                 <div className="w-20 h-20 bg-baobab/20 text-baobab rounded-full flex items-center justify-center mx-auto text-4xl">
-                  🏆
+                  <Trophy className="w-10 h-10" aria-hidden="true" />
                 </div>
                 <h2 className="font-serif text-3xl font-bold text-canopy">
                   Quiz Terminé !
@@ -538,7 +522,7 @@ export default function SensibilisationPage() {
                 <div className="p-4 bg-sand/30 rounded-2xl border border-sand text-xs text-ink-soft max-w-md mx-auto">
                   {quizScore === QUIZ_QUESTIONS.length ? (
                     <p className="text-canopy font-bold">
-                      🥇 Félicitations ! Vous êtes un véritable Expert Écolo du Parc Bangr-Weoogo !
+                      Félicitations ! Vous êtes un véritable Expert Écolo du Parc Bangr-Weoogo !
                     </p>
                   ) : (
                     <p>
@@ -574,7 +558,7 @@ export default function SensibilisationPage() {
 
             {matchedIds.length === cards.length ? (
               <div className="text-center py-8 space-y-4">
-                <span className="text-5xl block animate-bounce">🎉</span>
+                <PartyPopper className="w-12 h-12 mx-auto text-baobab motion-safe:animate-bounce" aria-hidden="true" />
                 <h3 className="font-serif text-2xl font-bold text-canopy">Super ! Vous avez réussi le Memory !</h3>
                 <p className="text-xs text-ink-soft">Réussi en {memoryMoves} coups.</p>
                 <button
@@ -601,10 +585,10 @@ export default function SensibilisationPage() {
                       {isFlipped ? (
                         <>
                           <span className="text-3xl mb-1">{card.icon}</span>
-                          <span className="text-[11px] font-bold text-canopy leading-tight">{card.name}</span>
+                          <span className="text-xs font-bold text-canopy leading-tight">{card.name}</span>
                         </>
                       ) : (
-                        <span className="text-2xl font-serif opacity-40">🌿</span>
+                        <Leaf className="w-6 h-6 opacity-40" aria-hidden="true" />
                       )}
                     </button>
                   );
@@ -667,7 +651,7 @@ export default function SensibilisationPage() {
               <div className="font-serif text-4xl font-extrabold text-canopy">{ecoScorePercent}%</div>
               <p className="text-xs text-canopy font-medium">
                 {completedEcoCount === 5
-                  ? '🌟 Parfait ! Vous êtes un Éco-Citoyen exemplaire pour Ouagadougou !'
+                  ? 'Parfait ! Vous êtes un Éco-Citoyen exemplaire pour Ouagadougou !'
                   : `${completedEcoCount} engagement(s) coché(s). Complétez le défi pour devenir Éco-Citoyen !`}
               </p>
             </div>
@@ -694,7 +678,7 @@ export default function SensibilisationPage() {
                 </h2>
               </div>
 
-              <img
+              <img loading="lazy" decoding="async"
                 src={activeArticleModal.imageUrl}
                 alt={activeArticleModal.title}
                 className="w-full h-64 object-cover rounded-2xl border border-sand"

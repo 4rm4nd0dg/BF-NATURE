@@ -163,7 +163,7 @@ export default function HistoirePage() {
                   <div className="font-serif text-lg sm:text-xl font-bold text-canopy-deep">
                     {stat.value}
                   </div>
-                  <div className="text-[11px] text-ink-soft mt-1 leading-tight font-medium">
+                  <div className="text-xs text-ink-soft mt-1 leading-tight font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -219,7 +219,7 @@ export default function HistoirePage() {
                 {/* Year Label */}
                 <div className="md:absolute md:-left-[165px] md:top-1 font-serif text-xl md:text-2xl font-bold text-canopy mb-2 md:mb-0">
                   {event.year}
-                  <div className="text-[10px] font-sans font-semibold text-ink-soft uppercase tracking-wider">
+                  <div className="text-xs font-sans font-semibold text-ink-soft uppercase tracking-wider">
                     {event.period}
                   </div>
                 </div>
@@ -227,13 +227,13 @@ export default function HistoirePage() {
                 {/* Card Event */}
                 <div className="bg-card rounded-2xl overflow-hidden border border-[#E9E1CC] shadow-md hover:shadow-xl transition grid grid-cols-1 md:grid-cols-3 gap-0">
                   <div className="h-56 md:h-auto overflow-hidden bg-sand relative">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={event.image}
                       alt={event.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
                     />
                     <div className="absolute top-3 left-3 md:hidden">
-                      <span className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border backdrop-blur-md ${event.badgeColor}`}>
+                      <span className={`text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border backdrop-blur-md ${event.badgeColor}`}>
                         {event.badge}
                       </span>
                     </div>
@@ -242,7 +242,7 @@ export default function HistoirePage() {
                   <div className="p-6 md:col-span-2 flex flex-col justify-between">
                     <div>
                       <div className="hidden md:block mb-2">
-                        <span className={`text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border backdrop-blur-sm ${event.badgeColor}`}>
+                        <span className={`text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border backdrop-blur-sm ${event.badgeColor}`}>
                           {event.badge}
                         </span>
                       </div>
@@ -264,7 +264,7 @@ export default function HistoirePage() {
                       </div>
                     </div>
 
-                    <div className="mt-5 pt-3 border-t border-[#E9E1CC] flex items-center justify-between text-[11px] text-ink-soft">
+                    <div className="mt-5 pt-3 border-t border-[#E9E1CC] flex items-center justify-between text-xs text-ink-soft">
                       <span>Parc Urbain Bangr-Weoogo</span>
                       <span className="text-leaf font-semibold">Ouagadougou, Burkina Faso</span>
                     </div>

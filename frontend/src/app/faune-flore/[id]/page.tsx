@@ -43,7 +43,7 @@ export default async function EspeceDetailPage({ params }: { params: { id: strin
         <div className="bg-card rounded-3xl overflow-hidden border border-[#E9E1CC] shadow-md grid grid-cols-1 md:grid-cols-2">
           <div className="relative h-80 md:h-auto bg-sand min-h-[300px]">
             {especeData.photo_url ? (
-              <img
+              <img loading="lazy" decoding="async"
                 src={especeData.photo_url}
                 alt={especeData.nom_commun}
                 className="w-full h-full object-cover"

@@ -224,10 +224,10 @@ export default function LocationEspacesPage() {
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
             {Object.entries(PaymentProviderLogos).map(([key, item]) => (
               <div key={key} className="bg-harmattan p-3 rounded-2xl border border-[#E9E1CC] flex items-center gap-3">
-                <img src={item.logoUrl} alt={item.name} className="h-7 w-auto max-w-[65px] object-contain rounded" />
+                <img loading="lazy" decoding="async" src={item.logoUrl} alt={item.name} className="h-7 w-auto max-w-[65px] object-contain rounded" />
                 <div>
                   <div className="text-xs font-bold text-canopy">{item.name}</div>
-                  <div className="text-[10px] text-ink-soft">{item.subtitle}</div>
+                  <div className="text-xs text-ink-soft">{item.subtitle}</div>
                 </div>
               </div>
             ))}
@@ -286,7 +286,7 @@ export default function LocationEspacesPage() {
             <div className="mt-4 p-5 bg-harmattan rounded-2xl border border-sand space-y-4">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-3 border-b border-[#E4DAC2]">
                 <div>
-                  <span className="text-[11px] text-ink-soft uppercase font-mono">Dossier N° {searchedDemande.id}</span>
+                  <span className="text-xs text-ink-soft uppercase font-mono">Dossier N° {searchedDemande.id}</span>
                   <h4 className="font-serif font-bold text-base text-canopy">
                     {searchedDemande.espace?.nom || selectedEspace?.nom}
                   </h4>
@@ -296,11 +296,11 @@ export default function LocationEspacesPage() {
                   {/* STATUT PAIEMENT BADGE */}
                   {paidDemandes[searchedDemande.id] ? (
                     <span className="inline-flex items-center gap-1 text-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1 rounded-full">
-                      <CheckCircle className="w-4 h-4 text-emerald-700" /> 🟢 PAYÉ &amp; ACQUITTÉ
+                      <CheckCircle className="w-4 h-4 text-emerald-700" /> PAYÉ &amp; ACQUITTÉ
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1 text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1 rounded-full">
-                      <Clock className="w-4 h-4 text-amber-700" /> 🟡 EN ATTENTE DE PAIEMENT
+                      <Clock className="w-4 h-4 text-amber-700" /> EN ATTENTE DE PAIEMENT
                     </span>
                   )}
                 </div>
@@ -336,7 +336,7 @@ export default function LocationEspacesPage() {
 
                 {searchedDemande.statut === 'en_attente' && !paidDemandes[searchedDemande.id] && (
                   <div className="text-xs text-amber-900 font-medium bg-amber-50 px-4 py-2 rounded-full border border-amber-200">
-                    🔒 Validation Admin en cours... Le récépissé porte la mention <strong>"En attente de paiement"</strong>.
+                    Validation Admin en cours... Le récépissé porte la mention <strong>"En attente de paiement"</strong>.
                   </div>
                 )}
 
@@ -388,7 +388,7 @@ export default function LocationEspacesPage() {
                   <span className="flex items-center gap-1 text-ink-soft">
                     <Users className="w-3.5 h-3.5 text-baobab" /> Capacité : {espace.capacite} pers
                   </span>
-                  <span className="text-[10px] text-canopy font-semibold">Cliquer pour réserver</span>
+                  <span className="text-xs text-canopy font-semibold">Cliquer pour réserver</span>
                 </div>
               </div>
             ))}
@@ -404,7 +404,7 @@ export default function LocationEspacesPage() {
                 <span className="text-xs text-ink-soft">Calculateur de tarif automatique</span>
               </div>
               <div className="text-right">
-                <span className="text-[11px] text-ink-soft uppercase block">Devis Estimé</span>
+                <span className="text-xs text-ink-soft uppercase block">Devis Estimé</span>
                 <span className="font-serif font-semibold text-2xl text-baobab">
                   {estimatedQuote.toLocaleString()} FCFA
                 </span>
@@ -559,7 +559,7 @@ export default function LocationEspacesPage() {
 
             {/* HEADER RÉCÉPISSÉ */}
             <div className="text-center border-b-2 border-canopy/20 pb-6 mb-6">
-              <div className="text-[11px] font-bold uppercase tracking-widest text-canopy">
+              <div className="text-xs font-bold uppercase tracking-widest text-canopy">
                 BURKINA FASO — Unité - Progrès - Justice
               </div>
               <div className="text-xs text-ink-soft">Ministère de l'Environnement &amp; Commune de Ouagadougou</div>
@@ -576,12 +576,12 @@ export default function LocationEspacesPage() {
               {paidDemandes[showReceiptModal.id] ? (
                 <div className="bg-emerald-50 text-emerald-950 border-emerald-400 w-full py-3 rounded-xl flex items-center justify-center gap-2">
                   <CheckCircle className="w-5 h-5 text-emerald-700" />
-                  <span>🟢 STATUT DU RÉCÉPISSÉ : PAYÉ &amp; ACQUITTÉ</span>
+                  <span>STATUT DU RÉCÉPISSÉ : PAYÉ &amp; ACQUITTÉ</span>
                 </div>
               ) : (
                 <div className="bg-amber-50 text-amber-950 border-amber-400 w-full py-3 rounded-xl flex items-center justify-center gap-2">
                   <Clock className="w-5 h-5 text-amber-700" />
-                  <span>🟡 STATUT DU RÉCÉPISSÉ : EN ATTENTE DE PAIEMENT</span>
+                  <span>STATUT DU RÉCÉPISSÉ : EN ATTENTE DE PAIEMENT</span>
                 </div>
               )}
             </div>
@@ -647,7 +647,7 @@ export default function LocationEspacesPage() {
             </div>
 
             {/* MENTION LEGALE */}
-            <p className="text-[11px] text-ink-soft my-4 leading-relaxed italic text-center">
+            <p className="text-xs text-ink-soft my-4 leading-relaxed italic text-center">
               * Ce récépissé fait foi du dépôt de dossier auprès de la Régie du Parc Urbain Bangr-Weoogo. L'occupation définitive des lieux est subordonnée à l'approbation formelle de l'Administration et au règlement intégral du devis.
             </p>
 

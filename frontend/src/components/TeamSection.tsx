@@ -60,18 +60,18 @@ export function TeamSection() {
               className="bg-harmattan rounded-2xl overflow-hidden border border-sand shadow-sm hover:shadow-lg transition-all group flex flex-col justify-between"
             >
               <div className="relative h-64 overflow-hidden">
-                <img
+                <img loading="lazy" decoding="async"
                   src={member.imageUrl}
                   alt={`Photo de l'équipe : ${member.name}, ${member.role}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-canopy-deep/90 via-canopy-deep/30 to-transparent"></div>
-                <span className="absolute top-3 left-3 bg-leaf/90 text-canopy font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full">
+                <span className="absolute top-3 left-3 bg-leaf/90 text-canopy font-bold text-xs uppercase tracking-wider px-2.5 py-1 rounded-full">
                   {member.badge}
                 </span>
                 <div className="absolute bottom-3 left-3 right-3 text-harmattan">
                   <h3 className="font-serif font-bold text-base leading-tight">{member.name}</h3>
-                  <p className="text-[11px] text-leaf font-medium mt-0.5">{member.role}</p>
+                  <p className="text-xs text-leaf font-medium mt-0.5">{member.role}</p>
                 </div>
               </div>
               <div className="p-4 flex-grow">

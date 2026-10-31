@@ -168,7 +168,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
               <div className="flex justify-between">
                 <span className="text-ink-soft">Mode de Paiement :</span>
                 <span className="font-medium text-ink flex items-center gap-1.5">
-                  <img src={PaymentProviderLogos[provider].logoUrl} alt={provider} className="h-4 w-auto object-contain" />
+                  <img loading="lazy" decoding="async" src={PaymentProviderLogos[provider].logoUrl} alt={provider} className="h-4 w-auto object-contain" />
                   {PaymentProviderLogos[provider].name}
                 </span>
               </div>
@@ -235,7 +235,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                         }`}
                       >
                         <div className="flex items-center justify-between">
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={item.logoUrl}
                             alt={item.name}
                             className="h-7 w-auto max-w-[70px] object-contain rounded"
@@ -246,7 +246,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                           <div className={`text-xs font-bold ${isSelected ? 'text-canopy-deep' : 'text-ink'}`}>
                             {item.name}
                           </div>
-                          <div className="text-[10px] text-ink-soft line-clamp-1">{item.subtitle}</div>
+                          <div className="text-xs text-ink-soft line-clamp-1">{item.subtitle}</div>
                         </div>
                       </button>
                     );
@@ -279,7 +279,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                   <div>
                     <label className="block text-xs font-semibold text-ink-soft mb-1 flex items-center justify-between">
                       <span>Code Secret PIN / Validation OTP</span>
-                      <span className="text-[10px] text-leaf font-medium">Simulation API</span>
+                      <span className="text-xs text-leaf font-medium">Simulation API</span>
                     </label>
                     <div className="relative">
                       <Lock className="w-4 h-4 text-ink-soft absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -369,7 +369,7 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
                 </button>
               </div>
 
-              <div className="flex items-center justify-center gap-1.5 text-[10px] text-ink-soft pt-1">
+              <div className="flex items-center justify-center gap-1.5 text-xs text-ink-soft pt-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-leaf" />
                 <span>Paiement sécurisé crypté — Parc Urbain Bangr-Weoogo</span>
               </div>

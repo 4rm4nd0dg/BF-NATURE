@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import { TreePine, Sprout } from 'lucide-react';
 
 export default function NotFound() {
   return (
     <div className="min-h-[75vh] flex items-center justify-center bg-harmattan px-4 py-16">
       <div className="max-w-lg text-center bg-sand/30 p-8 md:p-12 rounded-3xl border border-sand shadow-xl">
-        <span className="text-6xl md:text-7xl mb-4 block animate-bounce">🌳</span>
+        <TreePine className="w-16 h-16 md:w-20 md:h-20 mb-4 text-leaf motion-safe:animate-bounce" aria-hidden="true" />
         <h1 className="text-5xl font-serif font-extrabold text-canopy mb-2">404</h1>
         <h2 className="text-xl font-bold text-baobab mb-4">
           Oups ! Vous vous êtes égaré dans la forêt de Bangr-Weoogo...
@@ -16,7 +17,7 @@ export default function NotFound() {
           href="/"
           className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-canopy hover:bg-canopy-deep text-harmattan font-bold rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5"
         >
-          <span>🌱 Retourner à l'Accueil</span>
+          <span className="inline-flex items-center gap-2"><Sprout className="w-4 h-4" aria-hidden="true" /> Retourner à l'Accueil</span>
         </Link>
       </div>
     </div>

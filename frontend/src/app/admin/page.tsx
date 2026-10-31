@@ -182,7 +182,7 @@ export default function AdminPage() {
 
           <div className="flex items-center gap-3">
             <div className="bg-white/10 px-4 py-2.5 rounded-2xl border border-white/20 text-center">
-              <span className="text-[10px] text-[#CFDAC7] uppercase block font-semibold">Demandes en Attente</span>
+              <span className="text-xs text-[#CFDAC7] uppercase block font-semibold">Demandes en Attente</span>
               <span className="font-serif font-bold text-xl text-amber-400">{pendingCount} dossier(s)</span>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function AdminPage() {
           >
             <Building className="w-4 h-4" /> Demandes de Location d'Espaces ({locations.length})
             {pendingCount > 0 && (
-              <span className="w-5 h-5 rounded-full bg-amber-500 text-white text-[10px] flex items-center justify-center font-bold ml-1">
+              <span className="w-5 h-5 rounded-full bg-amber-500 text-white text-xs flex items-center justify-center font-bold ml-1">
                 {pendingCount}
               </span>
             )}
@@ -246,7 +246,7 @@ export default function AdminPage() {
                     locationFilter === 'en_attente' ? 'bg-amber-600 text-white' : 'bg-amber-50 text-amber-900 border border-amber-200'
                   }`}
                 >
-                  🟡 En Attente ({pendingCount})
+                  En Attente ({pendingCount})
                 </button>
                 <button
                   onClick={() => setLocationFilter('validee')}
@@ -254,7 +254,7 @@ export default function AdminPage() {
                     locationFilter === 'validee' ? 'bg-emerald-700 text-white' : 'bg-emerald-50 text-emerald-900 border border-emerald-200'
                   }`}
                 >
-                  🟢 Approuvées ({approvedCount})
+                  Approuvées ({approvedCount})
                 </button>
                 <button
                   onClick={() => setLocationFilter('refusee')}
@@ -262,7 +262,7 @@ export default function AdminPage() {
                     locationFilter === 'refusee' ? 'bg-red-700 text-white' : 'bg-red-50 text-red-900 border border-red-200'
                   }`}
                 >
-                  🔴 Refusées ({locations.filter((l) => l.statut === 'refusee').length})
+                  Refusées ({locations.filter((l) => l.statut === 'refusee').length})
                 </button>
               </div>
 
@@ -282,7 +282,7 @@ export default function AdminPage() {
             <div className="bg-card rounded-3xl overflow-hidden border border-[#E9E1CC] shadow-md">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs text-ink">
-                  <thead className="bg-sand border-b border-[#E9E1CC] text-[11px] uppercase font-semibold text-canopy tracking-wider">
+                  <thead className="bg-sand border-b border-[#E9E1CC] text-xs uppercase font-semibold text-canopy tracking-wider">
                     <tr>
                       <th className="py-4 px-6">Dossier / Réf</th>
                       <th className="py-4 px-6">Demandeur &amp; Contact</th>
@@ -301,33 +301,33 @@ export default function AdminPage() {
                         </td>
                         <td className="py-4 px-6">
                           <div className="font-semibold text-ink">{loc.nom_demandeur}</div>
-                          <div className="text-[11px] text-ink-soft">{loc.telephone_demandeur}</div>
-                          <div className="text-[10px] text-ink-soft">{loc.email_demandeur}</div>
+                          <div className="text-xs text-ink-soft">{loc.telephone_demandeur}</div>
+                          <div className="text-xs text-ink-soft">{loc.email_demandeur}</div>
                         </td>
                         <td className="py-4 px-6">
                           <div className="font-semibold text-canopy-deep">{loc.espace?.nom || 'Espace Bangr-Weoogo'}</div>
-                          <div className="text-[11px] text-ink-soft">{loc.type_evenement} ({loc.nombre_personnes} pers)</div>
+                          <div className="text-xs text-ink-soft">{loc.type_evenement} ({loc.nombre_personnes} pers)</div>
                         </td>
                         <td className="py-4 px-6">
                           <div className="font-medium text-ink">{loc.date_evenement}</div>
-                          <div className="text-[11px] text-ink-soft">{loc.heure_debut} – {loc.heure_fin}</div>
+                          <div className="text-xs text-ink-soft">{loc.heure_debut} – {loc.heure_fin}</div>
                         </td>
                         <td className="py-4 px-6 font-serif font-bold text-baobab text-sm">
                           {loc.montant_devis.toLocaleString()} FCFA
                         </td>
                         <td className="py-4 px-6">
                           {loc.statut === 'en_attente' && (
-                            <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1 rounded-full font-semibold text-[10px]">
+                            <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1 rounded-full font-semibold text-xs">
                               <Clock className="w-3 h-3 text-amber-700 animate-spin" /> En Attente
                             </span>
                           )}
                           {loc.statut === 'validee' && (
-                            <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1 rounded-full font-semibold text-[10px]">
+                            <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1 rounded-full font-semibold text-xs">
                               <CheckCircle2 className="w-3 h-3 text-emerald-700" /> Approuvée
                             </span>
                           )}
                           {loc.statut === 'refusee' && (
-                            <span className="inline-flex items-center gap-1 bg-red-100 text-red-900 border border-red-300 px-3 py-1 rounded-full font-semibold text-[10px]">
+                            <span className="inline-flex items-center gap-1 bg-red-100 text-red-900 border border-red-300 px-3 py-1 rounded-full font-semibold text-xs">
                               <XCircle className="w-3 h-3 text-red-700" /> Refusée
                             </span>
                           )}
@@ -337,7 +337,7 @@ export default function AdminPage() {
                             {loc.statut !== 'validee' && (
                               <button
                                 onClick={() => handleUpdateStatus(loc.id, 'validee')}
-                                className="bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-1.5 rounded-xl font-semibold text-[11px] flex items-center gap-1 shadow-sm transition"
+                                className="bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-1 shadow-sm transition"
                                 title="Approuver la demande et débloquer le paiement du client"
                               >
                                 <Check className="w-3.5 h-3.5" /> Approuver
@@ -346,7 +346,7 @@ export default function AdminPage() {
                             {loc.statut !== 'refusee' && (
                               <button
                                 onClick={() => handleUpdateStatus(loc.id, 'refusee')}
-                                className="bg-red-700 hover:bg-red-800 text-white px-3 py-1.5 rounded-xl font-semibold text-[11px] flex items-center gap-1 shadow-sm transition"
+                                className="bg-red-700 hover:bg-red-800 text-white px-3 py-1.5 rounded-xl font-semibold text-xs flex items-center gap-1 shadow-sm transition"
                                 title="Refuser la demande de location"
                               >
                                 <X className="w-3.5 h-3.5" /> Refuser
@@ -371,7 +371,7 @@ export default function AdminPage() {
             </h3>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs text-ink">
-                <thead className="bg-sand border-b border-[#E9E1CC] text-[11px] uppercase font-semibold text-canopy">
+                <thead className="bg-sand border-b border-[#E9E1CC] text-xs uppercase font-semibold text-canopy">
                   <tr>
                     <th className="py-3 px-4">N° Billet</th>
                     <th className="py-3 px-4">Date de Visite</th>
@@ -390,7 +390,7 @@ export default function AdminPage() {
                       <td className="py-3.5 px-4">{res.quantite} pers</td>
                       <td className="py-3.5 px-4 font-serif font-bold text-baobab">{res.montant_total.toLocaleString()} FCFA</td>
                       <td className="py-3.5 px-4">
-                        <span className="bg-leaf/20 text-leaf px-2.5 py-1 rounded-full font-semibold text-[10px] inline-flex items-center gap-1">
+                        <span className="bg-leaf/20 text-leaf px-2.5 py-1 rounded-full font-semibold text-xs inline-flex items-center gap-1">
                           <CheckCircle2 className="w-3 h-3" /> Payé via Mobile Money
                         </span>
                       </td>

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,17 +7,20 @@
   --canopy-deep: #132B1B;
   --harmattan: #F7F3E8;
   --sand: #EDE4CE;
-  --baobab: #A9702E;
+  --baobab: #8A5517;
   --leaf: #7FA65C;
+  --leaf-dark: #4A7229;
   --ink: #23281F;
   --ink-soft: #5B6153;
   --card: #FFFFFF;
-  --font-fraunces: 'Fraunces', serif;
-  --font-work-sans: 'Work Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-work-sans), sans-serif;
+  font-family: var(--font-work-sans), 'Work Sans', sans-serif;
   color: var(--ink);
   background-color: var(--harmattan);
   line-height: 1.6;
@@ -27,9 +28,61 @@ body {
 }
 
 h1, h2, h3, .font-serif {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-fraunces), 'Fraunces', serif;
 }
 
 .btn-pill {
   border-radius: 100px;
+}
+
+/* Curseur main sur tous les éléments cliquables */
+button:not(:disabled),
+[role='button']:not([aria-disabled='true']),
+summary,
+select,
+label[for] {
+  cursor: pointer;
+}
+
+/* Focus clavier toujours visible */
+:focus-visible {
+  outline: 3px solid var(--baobab);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.bg-canopy :focus-visible,
+.bg-canopy-deep :focus-visible {
+  outline-color: var(--leaf);
+}
+
+/* Lien d'évitement (accessibilité clavier / lecteurs d'écran) */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--canopy);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Respect de prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

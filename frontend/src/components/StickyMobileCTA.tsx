@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { Ticket } from 'lucide-react';
 
 export function StickyMobileCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,7 +34,7 @@ export function StickyMobileCTA() {
           href="/billetterie"
           className="px-5 py-2.5 bg-baobab hover:bg-baobab/90 text-harmattan font-bold rounded-lg shadow-lg text-sm transition-all transform active:scale-95 flex items-center gap-2"
         >
-          <span>🎟️ Réserver</span>
+          <span className="inline-flex items-center gap-1.5"><Ticket className="w-4 h-4" aria-hidden="true" /> Réserver</span>
         </Link>
       </div>
     </div>

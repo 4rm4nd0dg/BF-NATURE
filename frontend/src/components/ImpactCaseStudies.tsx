@@ -46,7 +46,7 @@ export function ImpactCaseStudies() {
               className="bg-canopy/60 rounded-2xl border border-leaf/30 overflow-hidden flex flex-col justify-between hover:border-leaf transition-colors"
             >
               <div className="relative h-52 bg-canopy-deep/80 overflow-hidden">
-                <img
+                <img loading="lazy" decoding="async"
                   src={study.imageUrl}
                   alt={`Étude de cas : ${study.title}`}
                   className="w-full h-full object-cover"

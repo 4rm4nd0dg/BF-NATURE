@@ -216,7 +216,7 @@ export function MediathequeClient() {
               />
             ) : (
               <div className="relative w-full h-full group cursor-pointer" onClick={() => setIsPlayingInlineFeatured(true)}>
-                <img
+                <img loading="lazy" decoding="async"
                   src={featuredVideo.thumbnail}
                   alt={featuredVideo.title}
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-95 group-hover:scale-105 transition duration-700"
@@ -269,7 +269,7 @@ export function MediathequeClient() {
                     className="relative h-48 w-full bg-canopy-deep overflow-hidden group cursor-pointer"
                     onClick={() => handleSelectVideo(video)}
                   >
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={video.thumbnail}
                       alt={video.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85"
@@ -279,10 +279,10 @@ export function MediathequeClient() {
                         <Play className="w-5 h-5 fill-current ml-0.5" />
                       </div>
                     </div>
-                    <span className="absolute bottom-2.5 right-2.5 bg-black/80 text-white text-[10px] font-mono px-2 py-0.5 rounded">
+                    <span className="absolute bottom-2.5 right-2.5 bg-black/80 text-white text-xs font-mono px-2 py-0.5 rounded">
                       {video.duration}
                     </span>
-                    <span className="absolute top-2.5 left-2.5 bg-leaf text-canopy-deep text-[9px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full">
+                    <span className="absolute top-2.5 left-2.5 bg-leaf text-canopy-deep text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full">
                       {video.category}
                     </span>
                   </div>
@@ -306,7 +306,7 @@ export function MediathequeClient() {
                       </button>
                       <button
                         onClick={() => setActiveModalVideo(video)}
-                        className="text-[11px] font-medium text-ink-soft hover:text-canopy underline"
+                        className="text-xs font-medium text-ink-soft hover:text-canopy underline"
                       >
                         Plein écran
                       </button>
@@ -344,7 +344,7 @@ export function MediathequeClient() {
                 onClick={() => setActivePhoto(item)}
               >
                 <div className="relative h-56 w-full bg-sand overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
@@ -354,7 +354,7 @@ export function MediathequeClient() {
                       <Eye className="w-4 h-4 text-leaf" /> Agrandir
                     </span>
                   </div>
-                  <span className="absolute top-3 left-3 bg-canopy-deep/85 text-harmattan text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
+                  <span className="absolute top-3 left-3 bg-canopy-deep/85 text-harmattan text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full backdrop-blur-sm">
                     {item.category}
                   </span>
                 </div>
@@ -375,7 +375,7 @@ export function MediathequeClient() {
           <div className="bg-canopy-deep rounded-3xl overflow-hidden w-full max-w-4xl border border-white/20 shadow-2xl relative">
             <div className="p-4 sm:p-6 border-b border-white/10 flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-leaf">
+                <span className="text-xs font-semibold uppercase tracking-wider text-leaf">
                   {activeModalVideo.category}
                 </span>
                 <h3 className="font-serif text-xl sm:text-2xl font-medium text-white">
@@ -429,7 +429,7 @@ export function MediathequeClient() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative max-h-[75vh] w-full bg-black flex items-center justify-center">
-              <img
+              <img loading="lazy" decoding="async"
                 src={activePhoto.image}
                 alt={activePhoto.title}
                 className="max-h-[75vh] w-auto max-w-full object-contain"
@@ -444,7 +444,7 @@ export function MediathequeClient() {
             </div>
             <div className="p-4 sm:p-6 bg-canopy flex items-center justify-between">
               <div>
-                <span className="text-[10px] uppercase font-semibold text-leaf tracking-wider">
+                <span className="text-xs uppercase font-semibold text-leaf tracking-wider">
                   {activePhoto.category}
                 </span>
                 <h3 className="font-serif text-lg text-white font-medium">

@@ -196,7 +196,7 @@ export default async function HomePage() {
             </div>
 
             <div className="bg-card rounded-2xl p-8 border-2 border-baobab shadow-md flex flex-col justify-between relative">
-              <span className="absolute -top-3 right-6 bg-baobab text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+              <span className="absolute -top-3 right-6 bg-baobab text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
                 Recommandé
               </span>
               <div>
@@ -269,7 +269,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card rounded-2xl overflow-hidden border border-[#E9E1CC] shadow-sm flex flex-col justify-between">
               <div className="relative h-48 bg-canopy-deep/80 overflow-hidden">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/images/salle_polyvalente2.jpg"
                   alt="Salle polyvalente du parc (120 personnes)"
                   className="w-full h-full object-cover"
@@ -379,16 +379,16 @@ export default async function HomePage() {
 
             {/* Représentation visuelle de la carte du parc */}
             <div className="relative h-80 rounded-2xl overflow-hidden border-2 border-sand shadow-inner bg-canopy-deep/90 flex items-center justify-center p-6 text-center">
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/Parc_Urbain_Bangr-Weoogo_map_sign,_Burkina_Faso,_2008.jpg"
                 alt="Carte de localisation du Parc Urbain Bangr-Weoogo à Ouagadougou"
                 className="absolute inset-0 w-full h-full object-cover opacity-40"
               />
               <div className="relative z-10 bg-canopy-deep/90 p-6 rounded-2xl border border-leaf/40 backdrop-blur-sm max-w-xs">
-                <span className="text-3xl mb-2 block">📍</span>
+                <MapPin className="w-8 h-8 mb-2 text-leaf" aria-hidden="true" />
                 <h3 className="font-serif font-bold text-harmattan text-lg">Parc Urbain Bangr-Weoogo</h3>
                 <p className="text-xs text-leaf font-medium mt-1">Burkina Faso - Ouagadougou</p>
-                <span className="inline-block mt-3 text-[11px] bg-baobab text-harmattan px-3 py-1 rounded-full font-bold">
+                <span className="inline-block mt-3 text-xs bg-baobab text-harmattan px-3 py-1 rounded-full font-bold">
                   Ouvert aujourd'hui : 06h00 – 18h30
                 </span>
               </div>
@@ -416,7 +416,7 @@ export default async function HomePage() {
       <section className="pb-24">
         <div className="max-w-[1180px] mx-auto px-6">
           <div className="relative rounded-[28px] p-10 md:p-16 text-center border border-leaf/30 overflow-hidden bg-canopy-deep text-harmattan shadow-xl">
-            <img
+            <img loading="lazy" decoding="async"
               src="/images/aller.webp"
               alt="Arrière-plan sensibilisation"
               className="absolute inset-0 w-full h-full object-cover opacity-35 pointer-events-none"

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Script from 'next/script';
+import { Cookie } from 'lucide-react';
 
 export function Analytics() {
   const [consentGiven, setConsentGiven] = useState<boolean | null>(null);
@@ -50,7 +51,7 @@ export function Analytics() {
       {consentGiven === null && (
         <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-md bg-canopy-deep text-harmattan p-5 rounded-2xl shadow-2xl border border-leaf/30 z-50 animate-fade-in">
           <div className="flex items-start gap-3">
-            <span className="text-2xl">🍪</span>
+            <Cookie className="w-6 h-6 text-leaf shrink-0" aria-hidden="true" />
             <div>
               <h3 className="font-bold text-sm text-harmattan">Gestion de la Confidentialité</h3>
               <p className="text-xs text-harmattan/80 mt-1 leading-relaxed">

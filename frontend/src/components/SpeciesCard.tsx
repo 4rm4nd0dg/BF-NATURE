@@ -15,7 +15,7 @@ export const SpeciesCard: React.FC<SpeciesCardProps> = ({ espece }) => {
     >
       <div className="relative h-44 w-full bg-sand overflow-hidden">
         {espece.photo_url ? (
-          <img
+          <img loading="lazy" decoding="async"
             src={espece.photo_url}
             alt={espece.nom_commun}
             className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
@@ -29,7 +29,7 @@ export const SpeciesCard: React.FC<SpeciesCardProps> = ({ espece }) => {
 
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
-          <span className="inline-block text-[11px] font-semibold uppercase tracking-wider text-leaf mb-1">
+          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-leaf-dark mb-1">
             {espece.categorie === 'animal' ? 'Faune' : 'Flore'}
           </span>
           <h3 className="font-serif text-lg font-medium text-ink group-hover:text-canopy transition-colors">

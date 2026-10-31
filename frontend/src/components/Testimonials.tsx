@@ -72,7 +72,7 @@ export function Testimonials() {
                       </span>
                     ))}
                   </div>
-                  <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border shrink-0 ${rev.colorBg}`}>
+                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full border shrink-0 ${rev.colorBg}`}>
                     {rev.badge}
                   </span>
                 </div>
@@ -89,7 +89,7 @@ export function Testimonials() {
                   <h3 className="font-bold text-canopy-deep text-sm truncate">
                     Visiteur {rev.initials}
                   </h3>
-                  <p className="text-[11px] text-ink-soft truncate mt-0.5">
+                  <p className="text-xs text-ink-soft truncate mt-0.5">
                     {rev.role} • <span className="italic">{rev.date}</span>
                   </p>
                 </div>

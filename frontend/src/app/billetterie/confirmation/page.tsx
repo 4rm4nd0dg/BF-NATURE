@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import { Printer, Leaf } from 'lucide-react';
 
 export default function BilletterieConfirmationPage() {
   return (
@@ -49,13 +50,13 @@ export default function BilletterieConfirmationPage() {
             onClick={() => window.print()}
             className="px-6 py-3 bg-sand hover:bg-sand/80 text-canopy font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2"
           >
-            <span>🖨️ Imprimer mon Billet</span>
+            <span className="inline-flex items-center gap-2"><Printer className="w-4 h-4" aria-hidden="true" /> Imprimer mon Billet</span>
           </button>
           <Link
             href="/"
             className="px-6 py-3 bg-canopy hover:bg-canopy-deep text-harmattan font-bold rounded-xl transition-colors text-sm flex items-center justify-center gap-2"
           >
-            <span>🌿 Retourner au Site</span>
+            <span className="inline-flex items-center gap-2"><Leaf className="w-4 h-4" aria-hidden="true" /> Retourner au Site</span>
           </Link>
         </div>
       </div>

@@ -136,13 +136,13 @@ export default function PersonnelPage() {
                     key={idx}
                     className="bg-card rounded-2xl p-6 border border-[#E9E1CC] shadow-sm hover:shadow-md transition flex gap-4 items-start"
                   >
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={member.photo}
                       alt={member.nom}
                       className="w-16 h-16 rounded-2xl object-cover border-2 border-leaf shrink-0 shadow-sm"
                     />
                     <div className="space-y-1 flex-1">
-                      <span className="text-[10px] font-bold text-baobab uppercase tracking-wider bg-baobab/10 px-2 py-0.5 rounded-full inline-block">
+                      <span className="text-xs font-bold text-baobab uppercase tracking-wider bg-baobab/10 px-2 py-0.5 rounded-full inline-block">
                         {member.badge}
                       </span>
                       <h3 className="font-serif font-bold text-canopy text-base leading-snug">

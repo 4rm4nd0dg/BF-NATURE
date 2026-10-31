@@ -1,9 +1,23 @@
 import type { Metadata } from 'next';
+import { Fraunces, Work_Sans } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { StickyMobileCTA } from '../components/StickyMobileCTA';
 import { Analytics } from '../components/Analytics';
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-fraunces',
+});
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-work-sans',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -87,7 +101,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${fraunces.variable} ${workSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -95,8 +109,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col antialiased bg-harmattan text-ink pb-16 md:pb-0">
+        <a href="#contenu" className="skip-link">Aller au contenu principal</a>
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main id="contenu" className="flex-grow">{children}</main>
         <Footer />
         <StickyMobileCTA />
         <Analytics />

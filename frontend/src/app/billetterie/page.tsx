@@ -104,7 +104,7 @@ export default function BilletteriePage() {
             <div className="my-6 text-center bg-harmattan p-6 rounded-2xl border border-sand">
               <div className="w-48 h-48 mx-auto bg-white p-3 rounded-xl border border-[#DED2B4] shadow-md flex items-center justify-center">
                 {reservationCompleted.qr_code.startsWith('data:image') ? (
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={reservationCompleted.qr_code}
                     alt="QR Code Billet"
                     className="w-full h-full object-contain"
@@ -112,7 +112,7 @@ export default function BilletteriePage() {
                 ) : (
                   <div className="flex flex-col items-center justify-center text-canopy">
                     <QrCode className="w-24 h-24 stroke-[1.5]" />
-                    <span className="text-[10px] font-mono mt-1 text-ink-soft">{reservationCompleted.id}</span>
+                    <span className="text-xs font-mono mt-1 text-ink-soft">{reservationCompleted.id}</span>
                   </div>
                 )}
               </div>
@@ -238,7 +238,7 @@ export default function BilletteriePage() {
                         >
                           {item.price.toLocaleString()} FCFA / pers
                         </div>
-                        <div className={`text-[10px] mt-0.5 ${typeBillet === key ? 'text-white/80' : 'text-ink-soft'}`}>
+                        <div className={`text-xs mt-0.5 ${typeBillet === key ? 'text-white/80' : 'text-ink-soft'}`}>
                           {item.desc}
                         </div>
                       </button>
@@ -315,10 +315,10 @@ export default function BilletteriePage() {
                 <div className="grid grid-cols-2 gap-3">
                   {Object.entries(PaymentProviderLogos).map(([key, item]) => (
                     <div key={key} className="p-3 bg-harmattan rounded-2xl border border-[#E9E1CC] flex items-center gap-3">
-                      <img src={item.logoUrl} alt={item.name} className="h-7 w-auto max-w-[65px] object-contain rounded" />
+                      <img loading="lazy" decoding="async" src={item.logoUrl} alt={item.name} className="h-7 w-auto max-w-[65px] object-contain rounded" />
                       <div>
                         <div className="text-xs font-bold text-canopy">{item.name}</div>
-                        <div className="text-[10px] text-ink-soft">{item.subtitle}</div>
+                        <div className="text-xs text-ink-soft">{item.subtitle}</div>
                       </div>
                     </div>
                   ))}
@@ -331,16 +331,16 @@ export default function BilletteriePage() {
                 </h3>
                 <ul className="space-y-3 text-xs text-ink-soft leading-relaxed">
                   <li className="flex items-start gap-2">
-                    <span className="text-leaf font-bold">✓</span> Horaires d'ouverture : 06h00 – 18h00 (7j/7).
+                    <span className="text-leaf-dark font-bold" aria-hidden="true">✓</span> Horaires d'ouverture : 06h00 – 18h00 (7j/7).
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-leaf font-bold">✓</span> Entrée au parc zoologique et jardin botanique incluse.
+                    <span className="text-leaf-dark font-bold" aria-hidden="true">✓</span> Entrée au parc zoologique et jardin botanique incluse.
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-leaf font-bold">✓</span> Gratuité pour les enfants de moins de 3 ans.
+                    <span className="text-leaf-dark font-bold" aria-hidden="true">✓</span> Gratuité pour les enfants de moins de 3 ans.
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-leaf font-bold">✓</span> Contrôle rapide par scanner QR Code aux portiques d'entrée.
+                    <span className="text-leaf-dark font-bold" aria-hidden="true">✓</span> Contrôle rapide par scanner QR Code aux portiques d'entrée.
                   </li>
                 </ul>
               </div>
