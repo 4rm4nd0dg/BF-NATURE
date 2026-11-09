@@ -21,7 +21,7 @@ echo "🔄 Démarrage de la sauvegarde automatique de PostgreSQL..."
 echo "📂 Fichier cible : ${BACKUP_FILE}"
 
 if command -v pg_dump &> /dev/null; then
-    PGPASSWORD="${PGPASSWORD:-postgres}" pg_dump -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" | gzip > "$BACKUP_FILE"
+    PGPASSWORD="${PGPASSWORD:?PGPASSWORD non défini}" pg_dump -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" -d "$DB_NAME" | gzip > "$BACKUP_FILE"
     echo "✅ Sauvegarde réussie : ${BACKUP_FILE}"
 else
     echo "⚠️ pg_dump n'est pas disponible dans le PATH local. Sauvegarde ignorée en mode simulation."
