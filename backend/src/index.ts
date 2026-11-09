@@ -47,15 +47,6 @@ const globalLimiter = rateLimit({
 });
 app.use(globalLimiter);
 
-// 4. Rate Limiter strict pour les routes d'authentification (Anti-Brute Force Login)
-export const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 10, // max 10 essais de connexion par 15 min
-  standardHeaders: true,
-  legacyHeaders: false,
-  message: { error: 'Nombre maximal de tentatives de connexion dépassé. Veuillez réessayer dans 15 minutes.' },
-});
-
 // 5. Restriction de la taille maximale des payloads d'upload (5MB max)
 app.use(express.json({ limit: '5mb' }));
 app.use(express.urlencoded({ extended: true, limit: '5mb' }));

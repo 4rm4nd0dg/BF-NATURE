@@ -16,9 +16,11 @@ import {
   createEspece,
   deleteEspece
 } from '../controllers/adminController.js';
+// import { handlePaymentWebhook } from '../controllers/webhookController.js';
+
 import { handlePaymentWebhook } from '../controllers/webhookController.js';
 import { requireAuth, requireRole } from '../middleware/authMiddleware.js';
-import { authLimiter } from '../index.js';
+import { authLimiter } from '../middleware/rateLimiter.js';
 
 const router = Router();
 
