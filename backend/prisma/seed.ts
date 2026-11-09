@@ -2,10 +2,17 @@ import { PrismaClient, TypeSite, CategorieEspece, RoleUtilisateur, TypeContenu }
 import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
+const adminPassword = process.env.SEED_ADMIN_PASSWORD;
+const superAdminPassword = process.env.SEED_SUPERADMIN_PASSWORD;
+if (!adminPassword || !superAdminPassword) {
+  throw new Error('Définis SEED_ADMIN_PASSWORD et SEED_SUPERADMIN_PASSWORD avant de lancer le seed.');
+}
 
 async function main() {
   console.log('🌱 Seeding database for Burkina Nature & Culture...');
-
+if ((await prisma.site.count()) > 0) {
+  throw new Error('La base contient déjà des données : seed annulé.');
+}
   // Nettoyage préalable
   await prisma.demandeLocation.deleteMany();
   await prisma.reservationBillet.deleteMany();
@@ -17,7 +24,7 @@ async function main() {
   await prisma.site.deleteMany();
 
   // 1. Création des Utilisateurs
-  const passwordHashAdmin = await bcrypt.hash('AdminPassword123!', 10);
+  const passwordHashAdmin = await bcrypt.hash(adminPassword, 10);
   await prisma.utilisateur.create({
     data: {
       nom: 'Gestionnaire Bangr-Weoogo',
@@ -28,7 +35,7 @@ async function main() {
     },
   });
 
-  const passwordHashSuper = await bcrypt.hash('SuperAdmin123!', 10);
+  const passwordHashSuper = await bcrypt.hash(superAdminPassword, 10);
   await prisma.utilisateur.create({
     data: {
       nom: 'Super Administrateur',
@@ -38,9 +45,7 @@ async function main() {
       role: RoleUtilisateur.super_admin,
     },
   });
-
-  console.log('✅ Utilisateurs créés (Admin: admin@bangrweoogo.bf / AdminPassword123!)');
-
+console.log('✅ Utilisateurs créés');
   // 2. Création du Site : Parc Urbain Bangr-Weoogo
   const site = await prisma.site.create({
     data: {
