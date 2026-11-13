@@ -86,3 +86,38 @@ label[for] {
     scroll-behavior: auto !important;
   }
 }
+
+/* Ergonomie tactile & UX "Effet Application" PWA */
+button,
+a,
+input,
+select,
+summary {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mode Standalone (PWA installée sur écran d'accueil) */
+@media all and (display-mode: standalone) {
+  body {
+    overscroll-behavior-y: contain;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Autoriser la sélection de texte sur les contenus éditoriaux */
+  p,
+  article,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  input,
+  textarea,
+  [contenteditable='true'] {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}

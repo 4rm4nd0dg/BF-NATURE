@@ -318,8 +318,27 @@ export default function FauneFlorePage() {
 
         {/* Species Grid */}
         {loading ? (
-          <div className="text-center py-20 text-ink-soft text-sm">
-            Chargement de la biodiversité...
+          <div className="space-y-6">
+            <div className="text-center py-4 text-xs font-medium text-ink-soft flex items-center justify-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-leaf animate-ping" />
+              <span>Chargement de la biodiversité de Bangr-Weoogo...</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <div
+                  key={i}
+                  className="bg-card rounded-2xl overflow-hidden border border-[#E9E1CC] shadow-xs flex flex-col animate-pulse"
+                >
+                  <div className="h-44 w-full bg-sand/80" />
+                  <div className="p-4 space-y-3">
+                    <div className="h-3 w-16 bg-leaf/20 rounded-full" />
+                    <div className="h-5 w-3/4 bg-sand rounded-md" />
+                    <div className="h-3 w-1/2 bg-sand/60 rounded-md" />
+                    <div className="h-10 w-full bg-sand/40 rounded-md mt-2" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         ) : filteredEspeces.length === 0 ? (
           <div className="bg-white rounded-2xl p-12 text-center border border-[#E9E1CC] max-w-md mx-auto">

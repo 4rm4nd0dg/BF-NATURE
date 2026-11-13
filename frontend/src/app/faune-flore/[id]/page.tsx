@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic';
 
 import { fetchSiteEspeces } from '../../../lib/api';
 import { ArrowLeft, MapPin, Shield, Info, TreePine } from 'lucide-react';
+import { ShareButton } from '../../../components/ShareButton';
 
 export default async function EspeceDetailPage({ params }: { params: { id: string } }) {
   let especeData;
@@ -33,12 +34,19 @@ export default async function EspeceDetailPage({ params }: { params: { id: strin
   return (
     <div className="py-12 bg-harmattan min-h-screen">
       <div className="max-w-[960px] mx-auto px-6">
-        <Link
-          href="/faune-flore"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-canopy hover:text-baobab mb-8 transition"
-        >
-          <ArrowLeft className="w-4 h-4" /> Retour à la liste de la faune &amp; flore
-        </Link>
+        <div className="flex items-center justify-between mb-8 gap-4 flex-wrap">
+          <Link
+            href="/faune-flore"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-canopy hover:text-baobab transition"
+          >
+            <ArrowLeft className="w-4 h-4" /> Retour à la liste de la faune &amp; flore
+          </Link>
+          <ShareButton
+            title={especeData.nom_commun}
+            text={`Découvrez ${especeData.nom_commun} (${especeData.nom_scientifique}) au Parc Urbain Bangr-Weoogo.`}
+            className="bg-sand/80 hover:bg-sand text-canopy border border-[#DED2B4] shadow-xs"
+          />
+        </div>
 
         <div className="bg-card rounded-3xl overflow-hidden border border-[#E9E1CC] shadow-md grid grid-cols-1 md:grid-cols-2">
           <div className="relative h-80 md:h-auto bg-sand min-h-[300px]">

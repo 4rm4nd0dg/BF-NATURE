@@ -6,6 +6,8 @@ import { Footer } from '../components/Footer';
 import { StickyMobileCTA } from '../components/StickyMobileCTA';
 import { Analytics } from '../components/Analytics';
 import { PwaRegister } from '../components/PwaRegister';
+import { PwaInstallPrompt } from '../components/PwaInstallPrompt';
+import { BottomNav } from '../components/BottomNav';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -130,14 +132,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased bg-harmattan text-ink pb-16 md:pb-0">
+      <body className="min-h-screen flex flex-col antialiased bg-harmattan text-ink pb-20 md:pb-0">
         <a href="#contenu" className="skip-link">Aller au contenu principal</a>
         <Navbar />
         <main id="contenu" className="flex-grow">{children}</main>
         <Footer />
         <StickyMobileCTA />
+        <BottomNav />
         <Analytics />
         <PwaRegister />
+        <PwaInstallPrompt />
       </body>
     </html>
   );
