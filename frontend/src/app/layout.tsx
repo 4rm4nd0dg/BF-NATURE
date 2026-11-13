@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Fraunces, Work_Sans } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '../components/Navbar';
@@ -19,6 +19,13 @@ const workSans = Work_Sans({
   variable: '--font-work-sans',
 });
 
+export const viewport: Viewport = {
+  themeColor: '#1E4029',
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
+
 export const metadata: Metadata = {
   title: {
     default: 'Parc Urbain Bangr-Weoogo — Burkina Nature & Culture',
@@ -26,6 +33,13 @@ export const metadata: Metadata = {
   },
   description:
     'Plateforme officielle du Parc Urbain Bangr-Weoogo à Ouagadougou, Burkina Faso. Découvrez la faune, la flore, réservez vos billets en ligne et louez vos espaces événementiels.',
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Bangr-Weoogo',
+  },
+  applicationName: 'Bangr-Weoogo',
   keywords: [
     'Bangr-Weoogo',
     'Parc Urbain Ouagadougou',
@@ -61,7 +75,14 @@ export const metadata: Metadata = {
     images: ['https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'],
   },
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/icons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
 };
 

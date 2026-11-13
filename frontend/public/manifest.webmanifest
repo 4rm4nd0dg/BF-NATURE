@@ -1,0 +1,81 @@
+{
+  "name": "Parc Urbain Bangr-Weoogo — Burkina Nature & Culture",
+  "short_name": "Bangr-Weoogo",
+  "description": "Application officielle du Parc Urbain Bangr-Weoogo à Ouagadougou. Découvrez la biodiversité, réservez vos billets et explorez le parc même hors connexion.",
+  "lang": "fr-BF",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#132B1B",
+  "theme_color": "#1E4029",
+  "categories": ["travel", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Découvrir la Biodiversité",
+      "short_name": "Faune & Flore",
+      "description": "Explorer les espèces emblématiques du parc",
+      "url": "/faune-flore",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Billetterie en Ligne",
+      "short_name": "Billetterie",
+      "description": "Acheter un billet d'entrée coupe-file",
+      "url": "/billetterie",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Histoire & Patrimoine",
+      "short_name": "Histoire",
+      "description": "Découvrir la forêt sacrée depuis 1932",
+      "url": "/histoire",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Médiathèque du Parc",
+      "short_name": "Photos & Vidéos",
+      "description": "Galerie visuelle du sanctuaire",
+      "url": "/mediatheque",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot-mobile-home.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Accueil et services du Parc Bangr-Weoogo"
+    },
+    {
+      "src": "/screenshots/screenshot-mobile-faune.png",
+      "sizes": "720x1280",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Biodiversité, faune et flore protégées"
+    }
+  ]
+}
