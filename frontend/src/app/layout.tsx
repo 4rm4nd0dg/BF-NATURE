@@ -5,6 +5,7 @@ import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { StickyMobileCTA } from '../components/StickyMobileCTA';
 import { Analytics } from '../components/Analytics';
+import { PwaRegister } from '../components/PwaRegister';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -136,6 +137,7 @@ export default function RootLayout({
         <Footer />
         <StickyMobileCTA />
         <Analytics />
+        <PwaRegister />
       </body>
     </html>
   );
